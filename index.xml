@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RapidOCR Documentation</title>
+    <link>https://rapidai.github.io/RapidOCRDocs/</link>
+    <description>Recent content on RapidOCR Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://rapidai.github.io/RapidOCRDocs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>概览</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/overview/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/overview/</guid>
+      <description>&amp;nbsp; 信创级开源OCR - 为世界内容安全贡献力量 &amp;nbsp; 简介 link 💖目前已知运行速度最快、支持最广，完全开源免费并支持离线快速部署的多平台多语言OCR。 支持的语言: 默认是中英文，其他语言识别需要自助转换。具体参考这里 缘起：PaddleOCR工程化不是太好，为了方便大家在各种端上进行OCR推理，我们将PaddleOCR中的模型转换为ONNX格式，使用Python/C++/Java/Swift/C# 将它移植到各个平台。 名称来源： 轻快好省并智能。基于深度学习的OCR技术，主打人工智能优势及小模型，以速度为使命，效果为主导。 使用： 如果仓库下已有模型满足要求 → RapidOCR部署使用即可。 不满足要求 → 基于PaddleOCR在自己数据上微调 → RapidOCR部署。 如果该仓库有帮助到你，还请点个小星星⭐呗！ 整体框架 linkflowchart LR subgraph Step direction TB C(Text Det) --&amp;gt; D(Text Cls) --&amp;gt; E(Text Rec) end A[/OurSelf Dataset/] --&amp;gt; B(PaddleOCR) --Train--&amp;gt; Step --&amp;gt; F(PaddleOCRModelConverter) F --ONNX--&amp;gt; G{RapidOCR Deploy\n&amp;lt;b&amp;gt;Python/C&amp;#43;&amp;#43;/Java/C#&amp;lt;/b&amp;gt;} G --&amp;gt; H(Windows x86/x64) &amp;amp; I(Linux) &amp;amp; J(Android) &amp;amp; K(Web) &amp;amp; L(Raspberry Pi) click B &amp;#34;https://github.com/PaddlePaddle/PaddleOCR&amp;#34; _blank click F &amp;#34;https://github.</description>
+    </item>
+    
+    <item>
+      <title>快速开始</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/quickstart/</link>
+      <pubDate>Wed, 10 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/quickstart/</guid>
+      <description>1. 安装 link pip install rapidocr_onnxruntime 2. 使用 link 终端使用 Python使用 rapidocr_onnxruntime -img tests/test_files/ch_en_num.jpg from rapidocr_onnxruntime import RapidOCR engine = RapidOCR() img_path = &amp;#39;tests/test_files/ch_en_num.jpg&amp;#39; result, elapse = engine(img_path) print(result) 3. 查看效果 link [ [[[9.0, 2.0], [321.0, 11.0], [318.0, 102.0], [6.0, 93.0]], &amp;#39;正品促销&amp;#39;, &amp;#39;0.7986101984977723&amp;#39;], [[[70.0, 98.0], [251.0, 98.0], [251.0, 125.0], [70.0, 125.0]], &amp;#39;大桶装更划算&amp;#39;, &amp;#39;0.7368737288883754&amp;#39;], [[[69.0, 144.0], [255.0, 144.0], [255.0, 164.0], [69.0, 164.0]], &amp;#39;强力去污符合国标&amp;#39;, &amp;#39;0.8172478278477987&amp;#39;], [[[107.0, 170.0], [219.0, 170.0], [219.0, 182.0], [107.0, 182.</description>
+    </item>
+    
+    <item>
+      <title>给作者加油</title>
+      <link>https://rapidai.github.io/RapidOCRDocs/docs/sponsor/</link>
+      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rapidai.github.io/RapidOCRDocs/docs/sponsor/</guid>
+      <description>写在前面 linkI like open source and AI technology because I think open source and AI will bring convenience and help to people in need, and will also make the world a better place. By donating to these projects, you can join me in making AI bring warmth and beauty to more people.
+我喜欢开源，喜欢AI技术，因为我认为开源和AI会为有需要的人带来方便和帮助，也会让这个世界变得更好。通过对这些项目的捐赠，您可以和我一道让AI为更多人带来温暖和美好。
+知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。
+支付宝或微信打赏 (Alipay reward or WeChat reward) link通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.</description>
+    </item>
+    
+  </channel>
+</rss>
