@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>在线demo</title>
+      <link>https://swhl.github.io/RapidVideOCR/docs/online_demo/</link>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://swhl.github.io/RapidVideOCR/docs/online_demo/</guid>
+      <description>简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看提取字幕效果 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidVideOCR/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidVideOCR/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidVideOCR 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidVideOCR/summary </description>
+    </item>
+    
+    <item>
       <title>给作者加油</title>
       <link>https://swhl.github.io/RapidVideOCR/docs/sponsor/</link>
       <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>

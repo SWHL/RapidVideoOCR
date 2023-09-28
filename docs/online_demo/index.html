@@ -18,9 +18,8 @@
 
 <html lang="en-us"><head>
     <meta charset="utf-8" />
-    <title>快速开始 | RapidVideOCR Documentation</title>
+    <title>在线demo | RapidVideOCR Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="故事的开始，只需3步。">
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
     <meta name="author" content="Colin Wilson - Lotus Labs" />
     <meta name="email" content="support@aigis.uk" />
@@ -33,12 +32,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://swhl.github.io/RapidVideOCR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://swhl.github.io/RapidVideOCR/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://swhl.github.io/RapidVideOCR/site.webmanifest">
-<meta property="og:title" content="快速开始" />
-<meta property="og:description" content="故事的开始，只需3步。" />
+<meta property="og:title" content="在线demo" />
+<meta property="og:description" content="简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看提取字幕效果 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidVideOCR/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidVideOCR/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidVideOCR 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidVideOCR/summary " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://swhl.github.io/RapidVideOCR/docs/quickstart/" /><meta property="og:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_14485558148924903936.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://swhl.github.io/RapidVideOCR/docs/online_demo/" /><meta property="og:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_12973859507018368011.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-09-28T10:38:08+08:00" />
+<meta property="article:modified_time" content="2023-09-28T15:07:14+08:00" />
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -101,7 +100,7 @@
                 
                     
                         
-                        <li class="current">
+                        <li class="">
                             <a class="sidebar-root-link" href="https://swhl.github.io/RapidVideOCR/docs/quickstart/">
                                 <i class="material-icons me-2">rocket_launch</i>
                                 
@@ -112,7 +111,7 @@
                 
                     
                         
-                        <li class="">
+                        <li class="current">
                             <a class="sidebar-root-link" href="https://swhl.github.io/RapidVideOCR/docs/online_demo/">
                                 <i class="material-icons me-2">language</i>
                                 
@@ -271,7 +270,7 @@
             
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">快速开始</span>
+                <span itemprop="name">在线demo</span>
                 <meta itemprop="position" content='2' />
             </li>
         
@@ -288,8 +287,13 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1-安装">1. 安装</a></li>
-            <li><a href="#2-使用">2. 使用</a></li>
+            <li>
+              <ul>
+                <li><a href="#简介">简介</a></li>
+                <li><a href="#demo源码">Demo源码</a></li>
+                <li><a href="#在线demo">在线Demo</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -309,8 +313,13 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1-安装">1. 安装</a></li>
-            <li><a href="#2-使用">2. 使用</a></li>
+            <li>
+              <ul>
+                <li><a href="#简介">简介</a></li>
+                <li><a href="#demo源码">Demo源码</a></li>
+                <li><a href="#在线demo">在线Demo</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -321,144 +330,36 @@
                                         <div class="mb-0 d-flex">
                                             
                                             <h1 class="content-title mb-0">
-                                                快速开始
+                                                在线demo
                                                 
                                             </h1>
                                         </div>
                                         
-                                            <p class="lead mb-3">故事的开始，只需3步。</p>
+                                            <p class="lead mb-3"></p>
                                         
                                         <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                             
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h3 id="1-安装">1. 安装 <a href="#1-%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-  
-  
-  
-
-  
-  
-  
-    
-  
-  
-
-   
-  
-
-  <div class="prism-codeblock  linenos">
-  <pre id="351b2a3" class="language-bash  line-numbers">
-  <code>pip install rapid_videocr</code>
-  </pre>
-  </div>
-<h3 id="2-使用">2. 使用 <a href="#2-%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-<nav>
-	<div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-		
-		
-		
-		
-
-		
-
-		<a class="nav-link  active"
-		   id="acfdbeTab" data-bs-toggle="tab" data-bs-target="#acfdbe"
-		   type="button" role="tab" aria-controls="acfdbe" aria-selected="true">终端使用</a>
-
-		
-
-		<a class="nav-link "
-		   id="cdebafTab" data-bs-toggle="tab" data-bs-target="#cdebaf"
-		   type="button" role="tab" aria-controls="cdebaf" aria-selected="true">Python使用</a>
-
-		
-
-	</div>
-</nav>
-
-<div class="tab-content" id="nav-tab-content">
-
-	
-
-
-
-
-
-
-<div class="tab-pane fade show active" id="acfdbe" role="tabpanel" aria-labelledby="nav-1">
-
-	
-
-
-  
-  
-  
-
-  
-  
-  
-    
-  
-  
-
-   
-  
-
-  <div class="prism-codeblock  linenos">
-  <pre id="47a29f1" class="language-bash  line-numbers">
-  <code>rapid_videocr -i test_files/RGBImages</code>
-  </pre>
-  </div>
-
-
-</div>
-
-
-
-
-
-
-<div class="tab-pane fade" id="cdebaf" role="tabpanel" aria-labelledby="nav-1">
-
-	
-
-
-  
-  
-  
-
-  
-  
-  
-    
-  
-  
-
-   
-  
-
-  <div class="prism-codeblock  linenos">
-  <pre id="b7482af" class="language-python  line-numbers">
-  <code>from rapid_videocr import RapidVideOCR
-
-extractor = RapidVideOCR(is_concat_rec=False,
-                         out_format=&#39;all&#39;,
-                         is_print_console=False)
-
-rgb_dir = &#39;test_files/RGBImages&#39;
-save_dir = &#39;result&#39;
-extractor(rgb_dir, save_dir)</code>
-  </pre>
-  </div>
-
-
-</div>
-
-
+        <h4 id="简介">简介 <a href="#%e7%ae%80%e4%bb%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于<a href="https://streamlit.io/" rel="external" target="_blank">streamlit<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>搭建而来的。</li>
+<li>两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。</li>
+<li>搭建demo的目的在于：
+<ul>
+<li>快速查看提取字幕效果</li>
+</ul>
+</li>
+</ul>
+<h4 id="demo源码">Demo源码 <a href="#demo%e6%ba%90%e7%a0%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>Hugging Face Demo: <a href="https://huggingface.co/spaces/SWHL/RapidVideOCR/tree/main" rel="external" target="_blank">https://huggingface.co/spaces/SWHL/RapidVideOCR/tree/main<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
+<li>魔搭社区: <a href="https://www.modelscope.cn/studios/liekkas/RapidVideOCR/files" rel="external" target="_blank">https://www.modelscope.cn/studios/liekkas/RapidVideOCR/files<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
+</ul>
+<h4 id="在线demo">在线Demo <a href="#%e5%9c%a8%e7%ba%bfdemo" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
+<li>Hugging Face Demo: <a href="https://huggingface.co/spaces/SWHL/RapidVideOCR" rel="external" target="_blank">https://huggingface.co/spaces/SWHL/RapidVideOCR<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
+<li>魔搭社区: <a href="https://www.modelscope.cn/studios/liekkas/RapidVideOCR/summary" rel="external" target="_blank">https://www.modelscope.cn/studios/liekkas/RapidVideOCR/summary<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
+</ul>
+<div align="center">
+    <img src="https://github.com/SWHL/RapidVideOCR/releases/download/v2.0.1/OnlineDemo.gif" width="100%" height="100%">
 </div>
 
     </div>
@@ -479,7 +380,7 @@ extractor(rgb_dir, save_dir)</code>
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/SWHL/RapidVideOCR/blob/main/content/docs/quickstart.md" alt="快速开始" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/SWHL/RapidVideOCR/blob/main/content/docs/online_demo.md" alt="在线demo" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -497,9 +398,9 @@ extractor(rgb_dir, save_dir)</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-28T10:38:08&#43;0800"
-            title="28 Sep 2023, 10:38 &#43;0800">
-            28 Sep 2023, 10:38 &#43;0800
+            data-authdate="2023-09-28T15:07:14&#43;0800"
+            title="28 Sep 2023, 15:07 &#43;0800">
+            28 Sep 2023, 15:07 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -515,21 +416,21 @@ extractor(rgb_dir, save_dir)</code>
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/RapidVideOCR/docs/overview/">
+		<a href="/RapidVideOCR/docs/quickstart/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 概览</p>
-					<p class="card-text ms-2"></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 快速开始</p>
+					<p class="card-text ms-2">故事的开始，只需3步。</p>
 					
 				</div>
 			</div>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/RapidVideOCR/docs/online_demo/">
+		<a class="ms-auto" href="/RapidVideOCR/docs/sponsor/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">在线demo <i class="material-icons align-middle">navigate_next</i></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">给作者加油 <i class="material-icons align-middle">navigate_next</i></p>
 					<p class="card-text me-2"></p>
 					
 				</div>

@@ -32,7 +32,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://swhl.github.io/RapidVideOCR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://swhl.github.io/RapidVideOCR/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://swhl.github.io/RapidVideOCR/site.webmanifest">
+<meta property="og:title" content="概览" />
+<meta property="og:description" content=" &nbsp; 简介 link 视频硬字幕提取，自动生成对应srt | txt文件。 支持字幕语言：中文 | 英文 （其他可以支持的语言参见：支持语种列表) 优势如下： 提取更快：与VideoSubFinder软件结合使用，提取关键字幕帧更快。 识别更准：采用RapidOCR作为识别库。 使用更方便：pip直接安装即可使用。 如果有帮助到您的话，请给个小星星⭐。 整体框架 linkflowchart LR A[/Video/] --Extract subtitle key frame--&gt; B(VideoSubFinder) --OCR--&gt;C(RapidVideOCR) C --Convert--&gt; D[/&#34;SRT | TXT&#34;/] " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://swhl.github.io/RapidVideOCR/docs/overview/" /><meta property="og:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_34201906486138589.png"/><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2023-09-28T10:38:08+08:00" />
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -100,6 +105,17 @@
                                 <i class="material-icons me-2">rocket_launch</i>
                                 
                                 快速开始
+                            </a>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://swhl.github.io/RapidVideOCR/docs/online_demo/">
+                                <i class="material-icons me-2">language</i>
+                                
+                                在线demo
                             </a>
                         </li>
                     
@@ -608,6 +624,13 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -635,6 +658,15 @@
     index.add(
             {
                 id:  2 ,
+                href: "\/RapidVideOCR\/docs\/online_demo\/",
+                title: "在线demo",
+                description: "简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看提取字幕效果 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidVideOCR/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidVideOCR/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidVideOCR 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidVideOCR/summary ",
+                content: "简介 link Hugging Face上的Demo和魔搭Demo是同一套代码，都是基于streamlit搭建而来的。 两者区别在于，魔搭是国内平台，不需要科学上网即可访问使用；Hugging Face则需要科学上网。 搭建demo的目的在于： 快速查看提取字幕效果 Demo源码 link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidVideOCR/tree/main 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidVideOCR/files 在线Demo link Hugging Face Demo: https://huggingface.co/spaces/SWHL/RapidVideOCR 魔搭社区: https://www.modelscope.cn/studios/liekkas/RapidVideOCR/summary "
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
                 href: "\/RapidVideOCR\/docs\/sponsor\/",
                 title: "给作者加油",
                 description: "写在前面 linkI like open source and AI technology because I think open source and AI will bring convenience and help to people in need, and will also make the world a better place. By donating to these projects, you can join me in making AI bring warmth and beauty to more people.\n我喜欢开源，喜欢AI技术，因为我认为开源和AI会为有需要的人带来方便和帮助，也会让这个世界变得更好。通过对这些项目的捐赠，您可以和我一道让AI为更多人带来温暖和美好。\n知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。\n支付宝或微信打赏 (Alipay reward or WeChat reward) link通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.",
@@ -643,7 +675,7 @@
         );
     index.add(
             {
-                id:  3 ,
+                id:  4 ,
                 href: "\/RapidVideOCR\/docs\/",
                 title: "Docs",
                 description: "",
