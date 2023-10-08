@@ -84,6 +84,15 @@ RapidVideOCR: 图像目录：指的是VideoSubFinder软件生成的RGBImages或�
     </item>
     
     <item>
+      <title>常见问题</title>
+      <link>https://swhl.github.io/RapidVideOCR/docs/faq/</link>
+      <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://swhl.github.io/RapidVideOCR/docs/faq/</guid>
+      <description>Q: 装完环境之后，运行python main.py之后，报错OSError: [WinError 126] 找不到指定的模組 linkA: 原因是Shapely库没有正确安装，如果是在Windows，可以在Shapely whl下载对应的whl包，离线安装即可；另外一种解决办法是用conda安装也可。(@hongyuntw)</description>
+    </item>
+    
+    <item>
       <title>更新日志</title>
       <link>https://swhl.github.io/RapidVideOCR/docs/changelog/</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
