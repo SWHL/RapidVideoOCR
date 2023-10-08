@@ -54,22 +54,12 @@ RapidVideOCR: 图像目录：指的是VideoSubFinder软件生成的RGBImages或�
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://swhl.github.io/RapidVideOCR/docs/tutorial/intermediate/</guid>
-      <description>引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: Windows | Mac | Linux 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以上部分图像来自终极保姆教程之安装python的教程_3.10.7版本
-下载python安装包
-打开python官网 → https://www.python.org，选择自己系统进入下载界面（VideoSubFinder工具目前只有Windows的） 找到自己想要的版本，以python 3.10.7 为例。如果网速下载较慢的话，可以加入RapidVideOCR QQ群（706807542），群文件获取。
-下载完成之后，双击打开这个exe，即可开始准备安装。点击自定义安装，选择安装位置。同时，记得勾选最后一项Add Python 3.10 to PATH
-直接点击下一步
-勾选改路径
-点击Install，等待安装完毕即可。
-Win + r 输入cmd，回车，进入命令窗口
-输入python，看是否出现类似下图样子，如出现，证明安装成功
-添加Scripts目录到环境变量中
-Win + q 输入“编辑” → 点击编辑系统环境变量
-打开环境变量 → 用户变量 → Path → 编辑
-新建Python安装目录下的Script目录路径，如下图所示，记得点击保存哈。
-3. 安装RapidVideOCR工具 link Win + r 输入cmd，回车，进入命令窗口
-输入pip install rapid_videocr -i https://pypi.douban.com/simple/ 安装RapidVideOCR
-测试是否安装成功，输入rapid_videocr -h,如果出现类似下图输出，则说明安装成功。</description>
+      <description>引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: `Windows | Mac | Linux`` 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以下部分图像来自终极保姆教程之安装python的教程_3.10.7版本
+1. 下载python安装包 link打开python官网 → https://www.python.org，选择自己系统进入下载界面（VideoSubFinder工具目前只有Windows的）
+2. 找到自己想要的版本， link以python 3.10.7 为例。如果网速下载较慢的话，可以加入RapidVideOCR QQ群（706807542），群文件获取。
+3. 下载完成之后，双击打开这个exe，即可开始准备安装。 link点击自定义安装，选择安装位置。同时，记得勾选最后一项Add Python 3.10 to PATH
+4. 直接点击下一步 link5. 勾选改路径 link6. 点击Install，等待安装完毕即可。 link7. Win + r 输入cmd，回车，进入命令窗口 link8. 输入python，看是否出现类似下图样子，如出现，证明安装成功 link9. 添加Scripts目录到环境变量中 link Win + q 输入“编辑” → 点击编辑系统环境变量
+打开环境变量 → 用户变量 → Path → 编辑</description>
     </item>
     
     <item>
