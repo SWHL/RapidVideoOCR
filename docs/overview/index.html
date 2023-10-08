@@ -37,7 +37,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://swhl.github.io/RapidVideOCR/docs/overview/" /><meta property="og:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_34201906486138589.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-09-28T10:38:08+08:00" />
+<meta property="article:modified_time" content="2023-10-08T16:35:40+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_34201906486138589.png"/>
+<meta name="twitter:title" content="概览"/>
+<meta name="twitter:description" content=" &nbsp; 简介 link 视频硬字幕提取，自动生成对应srt | txt文件。 支持字幕语言：中文 | 英文 （其他可以支持的语言参见：支持语种列表) 优势如下： 提取更快：与VideoSubFinder软件结合使用，提取关键字幕帧更快。 识别更准：采用RapidOCR作为识别库。 使用更方便：pip直接安装即可使用。 如果有帮助到您的话，请给个小星星⭐。 整体框架 linkflowchart LR A[/Video/] --Extract subtitle key frame--&gt; B(VideoSubFinder) --OCR--&gt;C(RapidVideOCR) C --Convert--&gt; D[/&#34;SRT | TXT&#34;/] "/>
+
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
     
@@ -121,12 +125,53 @@
                     
                 
                     
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
+                                <i class="material-icons me-2">local_library</i>
+                                使用教程
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://swhl.github.io/RapidVideOCR/docs/tutorial/beginner/">初级教程（界面版 下载解压使用）</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://swhl.github.io/RapidVideOCR/docs/tutorial/intermediate/">中级教程（python小白）</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://swhl.github.io/RapidVideOCR/docs/tutorial/senior/">高级教程（有python基础的小伙伴）</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
                         
                         <li class="">
                             <a class="sidebar-root-link" href="https://swhl.github.io/RapidVideOCR/docs/sponsor/">
-                                <i class="material-icons me-2">article</i>
+                                <i class="material-icons me-2">cheer</i>
                                 
                                 给作者加油
+                            </a>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://swhl.github.io/RapidVideOCR/docs/changelog/">
+                                <i class="material-icons me-2">update</i>
+                                
+                                更新日志
                             </a>
                         </li>
                     
@@ -396,9 +441,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-09-28T10:38:08&#43;0800"
-            title="28 Sep 2023, 10:38 &#43;0800">
-            28 Sep 2023, 10:38 &#43;0800
+            data-authdate="2023-10-08T16:35:40&#43;0800"
+            title="08 Oct 2023, 16:35 &#43;0800">
+            08 Oct 2023, 16:35 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -406,8 +451,12 @@
 </div>
 
     
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    
+    
+        
+    
+    <script src="/RapidVideOCR/docs/js/mermaid.min.23930b91c7738617bc6a0297457d45441f5c94750458c821d3aa2048ec33906c512e83c4c6bb66d27490da3bb4079b9b.js" integrity="sha384-I5MLkcdzhhe8agKXRX1FRB9clHUEWMgh06ogSOwzkGxRLoPExrtm0nSQ2ju0B5ub"></script>
+    <script>
         const config = {
             startOnLoad:true,
             logLevel: "error",
@@ -631,6 +680,41 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -652,7 +736,7 @@
                 href: "\/RapidVideOCR\/docs\/quickstart\/",
                 title: "快速开始",
                 description: "故事的开始，只需3步。",
-                content: "1. 安装 link pip install rapid_videocr 2. 使用 link 终端使用 Python使用 rapid_videocr -i test_files/RGBImages from rapid_videocr import RapidVideOCR extractor = RapidVideOCR(is_concat_rec=False, out_format='all', is_print_console=False) rgb_dir = 'test_files/RGBImages' save_dir = 'result' extractor(rgb_dir, save_dir) "
+                content: " notifications 该库的输入必须是来自VideoSubFinder软件输出的RGBImagers或者TXTImages目录的路径。VideoSubFinder教程：link\n1. 安装 link pip install rapid_videocr 2. 使用 link 终端使用 Python使用 rapid_videocr -i test_files/RGBImages from rapid_videocr import RapidVideOCR extractor = RapidVideOCR(is_concat_rec=False, out_format='all', is_print_console=False) rgb_dir = 'test_files/RGBImages' save_dir = 'result' extractor(rgb_dir, save_dir) "
             }
         );
     index.add(
@@ -667,6 +751,42 @@
     index.add(
             {
                 id:  3 ,
+                href: "\/RapidVideOCR\/docs\/tutorial\/",
+                title: "使用教程",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  4 ,
+                href: "\/RapidVideOCR\/docs\/tutorial\/beginner\/",
+                title: "初级教程（界面版 下载解压使用）",
+                description: "引言 link 考虑到提取视频字幕的小伙伴大多不是程序员行当，为了降低使用门槛，特此推出界面版的RapidVideOCR Desktop. RapidVideOCR Desktop需要搭配VideoSubFinder使用。它们两个关系如下图所示： flowchart LR\rA(VideoSubFinder) --提取字幕关键帧--\u003e B(RapidVideOCR) --OCR--\u003e C(SRT) VideoSubFinder使用教程 linkRapidVideOCR Desktop使用教程 link 下载对应平台的RapidVideOCR Desktop压缩包 Github下载 QQ群共享文件下载，QQ群号：706807542， 或者扫码加入： 解压zip包，双击RapidVideOCR.exe（以Windows平台为例） 界面如下图所示： 界面各个部分介绍 RapidVideOCR: 图像目录：指的是VideoSubFinder软件生成的RGBImages或者TXTImages目录，必须是这两个目录之一 保存路径：识别转换后的结果，包括srt文件和txt文件 叠图识别：勾选后，识别速度会变快。准确率可能差些 VideoSubFinder + RapidVideOCR: VSF exe路径：本地安装的VideoSubFinder全路径，例如:G:\\ProgramFiles\\VideoSubFinder_6.10_x64\\Release_x64\\VideoSubFinderWXW.exe 视频目录：想要提取硬字幕的视频所在目录 保存路径：保存提取结果的目录 上述都填好之后，点击OK按钮，即可开始识别。",
+                content: "引言 link 考虑到提取视频字幕的小伙伴大多不是程序员行当，为了降低使用门槛，特此推出界面版的RapidVideOCR Desktop. RapidVideOCR Desktop需要搭配VideoSubFinder使用。它们两个关系如下图所示： flowchart LR\rA(VideoSubFinder) --提取字幕关键帧--\u003e B(RapidVideOCR) --OCR--\u003e C(SRT) VideoSubFinder使用教程 linkRapidVideOCR Desktop使用教程 link 下载对应平台的RapidVideOCR Desktop压缩包\nGithub下载 QQ群共享文件下载，QQ群号：706807542， 或者扫码加入： 解压zip包，双击RapidVideOCR.exe（以Windows平台为例）\n界面如下图所示：\n界面各个部分介绍\nRapidVideOCR: 图像目录：指的是VideoSubFinder软件生成的RGBImages或者TXTImages目录，必须是这两个目录之一 保存路径：识别转换后的结果，包括srt文件和txt文件 叠图识别：勾选后，识别速度会变快。准确率可能差些 VideoSubFinder + RapidVideOCR: VSF exe路径：本地安装的VideoSubFinder全路径，例如:G:\\ProgramFiles\\VideoSubFinder_6.10_x64\\Release_x64\\VideoSubFinderWXW.exe 视频目录：想要提取硬字幕的视频所在目录 保存路径：保存提取结果的目录 上述都填好之后，点击OK按钮，即可开始识别。\n"
+            }
+        );
+    index.add(
+            {
+                id:  5 ,
+                href: "\/RapidVideOCR\/docs\/tutorial\/intermediate\/",
+                title: "中级教程（python小白）",
+                description: "引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: Windows | Mac | Linux 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以上部分图像来自终极保姆教程之安装python的教程_3.10.7版本\n下载python安装包\n打开python官网 → https://www.python.org，选择自己系统进入下载界面（VideoSubFinder工具目前只有Windows的） 找到自己想要的版本，以python 3.10.7 为例。如果网速下载较慢的话，可以加入RapidVideOCR QQ群（706807542），群文件获取。\n下载完成之后，双击打开这个exe，即可开始准备安装。点击自定义安装，选择安装位置。同时，记得勾选最后一项Add Python 3.10 to PATH\n直接点击下一步\n勾选改路径\n点击Install，等待安装完毕即可。\nWin + r 输入cmd，回车，进入命令窗口\n输入python，看是否出现类似下图样子，如出现，证明安装成功\n添加Scripts目录到环境变量中\nWin + q 输入“编辑” → 点击编辑系统环境变量\n打开环境变量 → 用户变量 → Path → 编辑\n新建Python安装目录下的Script目录路径，如下图所示，记得点击保存哈。\n3. 安装RapidVideOCR工具 link Win + r 输入cmd，回车，进入命令窗口\n输入pip install rapid_videocr -i https://pypi.douban.com/simple/ 安装RapidVideOCR\n测试是否安装成功，输入rapid_videocr -h,如果出现类似下图输出，则说明安装成功。",
+                content: "引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: Windows | Mac | Linux 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以上部分图像来自终极保姆教程之安装python的教程_3.10.7版本\n下载python安装包\n打开python官网 → https://www.python.org，选择自己系统进入下载界面（VideoSubFinder工具目前只有Windows的） 找到自己想要的版本，以python 3.10.7 为例。如果网速下载较慢的话，可以加入RapidVideOCR QQ群（706807542），群文件获取。\n下载完成之后，双击打开这个exe，即可开始准备安装。点击自定义安装，选择安装位置。同时，记得勾选最后一项Add Python 3.10 to PATH\n直接点击下一步\n勾选改路径\n点击Install，等待安装完毕即可。\nWin + r 输入cmd，回车，进入命令窗口\n输入python，看是否出现类似下图样子，如出现，证明安装成功\n添加Scripts目录到环境变量中\nWin + q 输入“编辑” → 点击编辑系统环境变量\n打开环境变量 → 用户变量 → Path → 编辑\n新建Python安装目录下的Script目录路径，如下图所示，记得点击保存哈。\n3. 安装RapidVideOCR工具 link Win + r 输入cmd，回车，进入命令窗口\n输入pip install rapid_videocr -i https://pypi.douban.com/simple/ 安装RapidVideOCR\n测试是否安装成功，输入rapid_videocr -h,如果出现类似下图输出，则说明安装成功。\n命令行使用\nWin + r 输入cmd，回车，进入命令窗口\n输入rapid_videocr -i RGBImages -s result -m concat。其中RGBImages为VideoSubFinder软件生成，可以自定义，例如：G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages 等等。\n脚本使用\n在桌面上新建TXT文件，命名为rapid_videocr.py，注意后缀名改为*.py。\n用记事本打开，将以下代码拷贝到rapid_videocr.py里面\nfrom rapid_videocr import RapidVideOCR\r# RapidVideOCR有两个初始化参数\r# is_concat_rec: 是否用单张图识别，默认是False，也就是默认用单图识别\r# concat_batch: 叠图识别的图像张数，默认10，可自行调节\r# out_format: 输出格式选择，[srt, txt, all], 默认是 all\r# is_print_console: 是否打印结果，[0, 1], 默认是0，不打印\rextractor = RapidVideOCR(is_concat=False, out_format='all', is_print_console=False)\r# Windows: 路径前加了一个r\rrgb_dir = r'G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages'\r# Linux/Mac写法如下\rrgb_dir = 'test_files/TXTImages'\rsave_dir = 'result'\rextractor(rgb_dir, save_dir) 更改rgb_dir 后面的目录为VideoSubFinder生成的RGBImages目录路径。\nWindows: 路径前加了一个r rgb_dir = r'G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages' Linux / Mac写法如下： rgb_dir = 'test_files/TXTImages' Win + r 打开终端输入以下代码，回车执行即可。\n$ cd Desktop\r$ python rapid_videocr.py "
+            }
+        );
+    index.add(
+            {
+                id:  6 ,
+                href: "\/RapidVideOCR\/docs\/tutorial\/senior\/",
+                title: "高级教程（有python基础的小伙伴）",
+                description: "安装使用VideoSubFinder软件\n下载地址：Windows \u0026 Linux (videosubfinder官网 / QQ群（706807542）共享文件) | Mac版 使用教程：VideoSubFinder提取字幕关键帧教程 最终生成的RGBImages和TXTImages目录一般会在软件安装目录下 ✧ 推荐用RGBImages目录中图像（感谢小伙伴dyphire在#21的反馈） 安装rapid_videocr\npip install rapid_videocr 脚本运行：\nOnly OCR Extract + OCR ```python {linenos=table}\rfrom rapid_videocr import RapidVideOCR\r# RapidVideOCR有两个初始化参数\r# is_concat_rec: 是否用单张图识别，默认是False，也就是默认用单图识别\r# concat_batch: 叠图识别的图像张数，默认10，可自行调节\r# out_format: 输出格式选择，[srt, txt, all], 默认是 all\r# is_print_console: 是否打印结果，[0, 1], 默认是0，不打印\rextractor = RapidVideOCR(is_concat_rec=False,\rout_format='all',\ris_print_console=False)\r# Windows端，需要这样写： rgb_dir = r'G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages'\r# Linux / Mac 下面这样写\rrgb_dir = 'test_files/TXTImages'\rsave_dir = 'result'\rextractor(rgb_dir, save_dir)\r```\r```python {linenos=table}\rfrom rapid_videocr import RapidVideoSubFinderOCR\rvsf_exe = r\"G:\\ProgramFiles\\VideoSubFinder_6.",
+                content: " 安装使用VideoSubFinder软件\n下载地址：Windows \u0026 Linux (videosubfinder官网 / QQ群（706807542）共享文件) | Mac版 使用教程：VideoSubFinder提取字幕关键帧教程 最终生成的RGBImages和TXTImages目录一般会在软件安装目录下 ✧ 推荐用RGBImages目录中图像（感谢小伙伴dyphire在#21的反馈） 安装rapid_videocr\npip install rapid_videocr 脚本运行：\nOnly OCR Extract + OCR ```python {linenos=table}\rfrom rapid_videocr import RapidVideOCR\r# RapidVideOCR有两个初始化参数\r# is_concat_rec: 是否用单张图识别，默认是False，也就是默认用单图识别\r# concat_batch: 叠图识别的图像张数，默认10，可自行调节\r# out_format: 输出格式选择，[srt, txt, all], 默认是 all\r# is_print_console: 是否打印结果，[0, 1], 默认是0，不打印\rextractor = RapidVideOCR(is_concat_rec=False,\rout_format='all',\ris_print_console=False)\r# Windows端，需要这样写： rgb_dir = r'G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages'\r# Linux / Mac 下面这样写\rrgb_dir = 'test_files/TXTImages'\rsave_dir = 'result'\rextractor(rgb_dir, save_dir)\r```\r```python {linenos=table}\rfrom rapid_videocr import RapidVideoSubFinderOCR\rvsf_exe = r\"G:\\ProgramFiles\\VideoSubFinder_6.10_x64\\Release_x64\\VideoSubFinderWXW.exe\"\rextractor = RapidVideoSubFinderOCR(vsf_exe_path=vsf_exe, is_concat_rec=True)\r# video_path can be directory path or video full path.\rvideo_path = 'test_files/tiny/2.mp4'\rsave_dir = 'outputs'\rextractor(video_path, save_dir)\r```\r命令行运行：\nUsage: $ rapid_videocr -h\rusage: rapid_videocr [-h] [-video_dir VIDEO_DIR] [-i IMG_DIR] [-s SAVE_DIR]\r[-o {srt,txt,all}] [--is_concat_rec] [-b CONCAT_BATCH] [-p]\r[-vsf VSF_EXE_PATH] [-c] [-r] [-ccti] [-ces CREATE_EMPTY_SUB]\r[-cscti CREATE_SUB_FROM_CLEARED_TXT_IMAGES]\r[-cstxt CREATE_SUB_FROM_TXT_RESULTS] [-ovocv] [-ovffmpeg] [-uc]\r[--start_time START_TIME] [--end_time END_TIME]\r[-te TOP_VIDEO_IMAGE_PERCENT_END]\r[-be BOTTOM_VIDEO_IMAGE_PERCENT_END]\r[-le LEFT_VIDEO_IMAGE_PERCENT_END]\r[-re RIGHT_VIDEO_IMAGE_PERCENT_END] [-gs GENERAL_SETTINGS]\r[-nthr NUM_THREADS] [-nocrthr NUM_OCR_THREADS]\roptional arguments:\r-h, --help show this help message and exit\rVideOCRParameters:\r-video_dir VIDEO_DIR, --video_dir VIDEO_DIR\rThe full path of video or the path of video directory.\r-i IMG_DIR, --img_dir IMG_DIR\rThe full path of RGBImages or TXTImages.\r-s SAVE_DIR, --save_dir SAVE_DIR\rThe path of saving the recognition result. Default is\r\"outputs\" under the current directory.\r-o {srt,txt,all}, --out_format {srt,txt,all}\rOutput file format. Default is \"all\".\r--is_concat_rec Which mode to run (concat recognition or single\rrecognition). Default is False.\r-b CONCAT_BATCH, --concat_batch CONCAT_BATCH\rThe batch of concating image nums in concat\rrecognition mode. Default is 10.\r-p, --print_console Whether to print the subtitle results to console. -p\rmeans to print.\rVSFParameters:\r-vsf VSF_EXE_PATH, --vsf_exe_path VSF_EXE_PATH\rThe full path of VideoSubFinderWXW.exe.\r-c, --clear_dirs Clear Folders (remove all images), performed before\rany other steps. Default is True\r-r, --run_search Run Search (find frames with hardcoded text (hardsub)\ron video) Default is True\r-ccti, --create_cleared_text_images\rCreate Cleared Text Images. Default is True\r-ces CREATE_EMPTY_SUB, --create_empty_sub CREATE_EMPTY_SUB\rCreate Empty Sub With Provided Output File Name (*.ass\ror *.srt)\r-cscti CREATE_SUB_FROM_CLEARED_TXT_IMAGES, --create_sub_from_cleared_txt_images CREATE_SUB_FROM_CLEARED_TXT_IMAGES\rCreate Sub From Cleared TXT Images With Provided\rOutput File Name (*.ass or *.srt)\r-cstxt CREATE_SUB_FROM_TXT_RESULTS, --create_sub_from_txt_results CREATE_SUB_FROM_TXT_RESULTS\rCreate Sub From TXT Results With Provided Output File\rName (*.ass or *.srt)\r-ovocv, --open_video_opencv\ropen video by OpenCV (default). Default is True\r-ovffmpeg, --open_video_ffmpeg\ropen video by FFMPEG\r-uc, --use_cuda use cuda\r--start_time START_TIME\rstart time, default = 0:00:00:000 (in format\rhour:min:sec:milisec)\r--end_time END_TIME end time, default = video length\r-te TOP_VIDEO_IMAGE_PERCENT_END, --top_video_image_percent_end TOP_VIDEO_IMAGE_PERCENT_END\rtop video image percent offset from image bottom, can\rbe in range [0.0,1.0], default = 1.0\r-be BOTTOM_VIDEO_IMAGE_PERCENT_END, --bottom_video_image_percent_end BOTTOM_VIDEO_IMAGE_PERCENT_END\rbottom video image percent offset from image bottom,\rcan be in range [0.0,1.0], default = 0.0\r-le LEFT_VIDEO_IMAGE_PERCENT_END, --left_video_image_percent_end LEFT_VIDEO_IMAGE_PERCENT_END\rleft video image percent end, can be in range\r[0.0,1.0], default = 0.0\r-re RIGHT_VIDEO_IMAGE_PERCENT_END, --right_video_image_percent_end RIGHT_VIDEO_IMAGE_PERCENT_END\rright video image percent end, can be in range\r[0.0,1.0], default = 1.0\r-gs GENERAL_SETTINGS, --general_settings GENERAL_SETTINGS\rgeneral settings (path to general settings *.cfg file,\rdefault = settings/general.cfg)\r-nthr NUM_THREADS, --num_threads NUM_THREADS\rnumber of threads used for Run Search\r-nocrthr NUM_OCR_THREADS, --num_ocr_threads NUM_OCR_THREADS\rnumber of threads used for Create Cleared TXT Images Example: Only OCR: $ rapid_videocr -i RGBImages Extract + OCR: $ rapid_videocr -vsf G:\\ProgramFiles\\VideoSubFinder_6.10_x64\\Release_x64\\VideoSubFinderWXW.exe -video_dir G:\\ProgramFiles\\RapidVideOCR\\test_files\\tiny 查看结果 前往save_dir目录下即可查看结果。 值得注意的是，如果想要让视频播放软件自动挂载srt文件，需要更改srt文件名字为视频文件名字，且放到同一目录下，亦或者手动指定加载。 "
+            }
+        );
+    index.add(
+            {
+                id:  7 ,
                 href: "\/RapidVideOCR\/docs\/sponsor\/",
                 title: "给作者加油",
                 description: "写在前面 linkI like open source and AI technology because I think open source and AI will bring convenience and help to people in need, and will also make the world a better place. By donating to these projects, you can join me in making AI bring warmth and beauty to more people.\n我喜欢开源，喜欢AI技术，因为我认为开源和AI会为有需要的人带来方便和帮助，也会让这个世界变得更好。通过对这些项目的捐赠，您可以和我一道让AI为更多人带来温暖和美好。\n知识星球RapidAI私享群 link这里的提问会优先得到回答和支持，也会享受到RapidAI组织后续持续优质的服务，欢迎大家的加入。\n支付宝或微信打赏 (Alipay reward or WeChat reward) link通过支付宝或者微信给作者打赏，请写好备注。 Give the author a reward through Alipay or WeChat.",
@@ -675,7 +795,16 @@
         );
     index.add(
             {
-                id:  4 ,
+                id:  8 ,
+                href: "\/RapidVideOCR\/docs\/changelog\/",
+                title: "更新日志",
+                description: "♦ 2023-08-05 v2.2.4 update: link 修复批量识别模式下，索引错误。 添加日志记录模块，便于使用桌面版，快速记录问题，便于反馈。 🛶2023-07-19 v2.2.3 update: link 增加对VSF的参数的适配，命令行模式和类初始化时，可以指定VSF命令的同名参数。详细使用参见link 🤓2023-07-08 v2.2.2 update: link 修复批量识别时，不能读取中文路径的问题 修复漏轴时，SRT中跳过问题。目前当出现某一轴未能识别，则会空出位置，便于校对。 保留VSF识别的中间结果 🐲2023-06-22 v2.2.0 update: link 该版本是向v2.1.x兼容的，也就是之前用法依然可以。 将VSF的CLI整合到库中，只需指定VideoSubFinderWXW.exe的全路径即可。 增加批量识别功能，指定视频目录，即可自动提取目录下所有视频字幕 使用示例, 参见：demo.py 😀2023-05-12 v2.1.7 update: link 优化代码 添加save_name参数，可以灵活指定保存的srt | txt文件名称，默认是result 🐱2023-03-27 v2.1.6 update: link 修复时间轴对不齐问题，详情参见issue 23 👽2023-03-23 v2.1.5 update: link 添加打印到屏幕的控制参数is_print_console 调整out_format参数位置到初始化类时 😀2023-03-14 v2.1.3 update: link 修复输入TXTImages目录且叠字识别时错误 😜2023-03-12 v2.1.2 update: link 修复索引错误，#22 🎢2023-03-11 v2.1.1 update: link 修复单图识别与之前版本差异问题 默认识别模式更改为单图识别，是否使用叠图识别，请自行决定 🥇2023-03-10 v2.1.0 update: link 添加叠字识别功能，速度更快，默认是叠字识别功能 🎈2023-03-02 v2.",
+                content: "♦ 2023-08-05 v2.2.4 update: link 修复批量识别模式下，索引错误。 添加日志记录模块，便于使用桌面版，快速记录问题，便于反馈。 🛶2023-07-19 v2.2.3 update: link 增加对VSF的参数的适配，命令行模式和类初始化时，可以指定VSF命令的同名参数。详细使用参见link 🤓2023-07-08 v2.2.2 update: link 修复批量识别时，不能读取中文路径的问题 修复漏轴时，SRT中跳过问题。目前当出现某一轴未能识别，则会空出位置，便于校对。 保留VSF识别的中间结果 🐲2023-06-22 v2.2.0 update: link 该版本是向v2.1.x兼容的，也就是之前用法依然可以。 将VSF的CLI整合到库中，只需指定VideoSubFinderWXW.exe的全路径即可。 增加批量识别功能，指定视频目录，即可自动提取目录下所有视频字幕 使用示例, 参见：demo.py 😀2023-05-12 v2.1.7 update: link 优化代码 添加save_name参数，可以灵活指定保存的srt | txt文件名称，默认是result 🐱2023-03-27 v2.1.6 update: link 修复时间轴对不齐问题，详情参见issue 23 👽2023-03-23 v2.1.5 update: link 添加打印到屏幕的控制参数is_print_console 调整out_format参数位置到初始化类时 😀2023-03-14 v2.1.3 update: link 修复输入TXTImages目录且叠字识别时错误 😜2023-03-12 v2.1.2 update: link 修复索引错误，#22 🎢2023-03-11 v2.1.1 update: link 修复单图识别与之前版本差异问题 默认识别模式更改为单图识别，是否使用叠图识别，请自行决定 🥇2023-03-10 v2.1.0 update: link 添加叠字识别功能，速度更快，默认是叠字识别功能 🎈2023-03-02 v2.0.5~7 update: link 修复生成的srt文件中的格式错误， #19 🎫2023-02-17 v2.0.4 update: link 针对传入的TXTImages目录，作了优化处理。相比于传入RGBImages，会更快和更准。推荐传入TXTImages目录 💎2023-02-17 v2.0.2 update: link 修复同行字幕识别丢失空格问题 🎈2023-01-29 v1.1.10 update: link 修复帧索引转时间戳时，索引为空错误 🧨2023-01-28 v1.1.9 update: link 修复时间轴对不齐问题 👊 2023-01-15 v1.1.4 update: link 添加输出txt格式的选项，目前v1.1.4版本默认输出srt和txt两种格式 添加根据运行程序屏幕大小，调节选择字幕的框大小 🌈2023-01-10 v1.0.3 update: link 将decord替换为OpenCV，因为decord处理MP4时，存在内存泄漏问题。详情参见：#208 🎄2022-12-04 update: link 添加交互式框定字幕位置功能，默认开启，更加好用，详情可参考下面的GIF图。感谢@Johndirr的建议。 优化代码结构，将RapidOCR相关模型和配置文件放到rapidocr目录下 rapidvideocr的配置文件也放到对应目录下 🌼2022-05-08 update: link 添加交互式确定二值化字幕图像阈值操作，仅仅支持Windows系统，可以通过is_select_threshold = True来使用 优化代码 🎉2022-05-03 update: link 添加GPU支持，具体配置教程参见：onnxruntime-gpu版推理配置 添加日文的支持，可以支持更多语种，具体参见：支持语种列表 💡2022-05-01 update: link 添加语音模块部分位于分支asr_module 添加语音识别模块，由于该模块中解码部分只能在Linux和Mac上运行，因此如果想要使用该模块，请在Linux和Mac上。 目前语音识别代码来自RapidASR/python部分。模型来自PaddleSpeech 经过简单测试，语音识别模块不是太准。-_-! 2022-03-09 update: link 添加常见问题模块，可以帮助大家跳过常见的小问题 2021-12-14 update: link 背景去除效果不好，导致丢失某些帧 尝试采用图像分割的方法，经过测试，CPU下推理速度太慢，暂时放弃 目前采用的固定的二值化阈值 (2021-12-14)完善对应的英文文档 (2021-12-14)添加运行耗时基准 添加具体参数说明 制作项目Logo 更多的测试 "
+            }
+        );
+    index.add(
+            {
+                id:  9 ,
                 href: "\/RapidVideOCR\/docs\/",
                 title: "Docs",
                 description: "",

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>使用教程 on RapidVideOCR Documentation</title>
+    <link>https://swhl.github.io/RapidVideOCR/docs/tutorial/</link>
+    <description>Recent content in 使用教程 on RapidVideOCR Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://swhl.github.io/RapidVideOCR/docs/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初级教程（界面版 下载解压使用）</title>
+      <link>https://swhl.github.io/RapidVideOCR/docs/tutorial/beginner/</link>
+      <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://swhl.github.io/RapidVideOCR/docs/tutorial/beginner/</guid>
+      <description>引言 link 考虑到提取视频字幕的小伙伴大多不是程序员行当，为了降低使用门槛，特此推出界面版的RapidVideOCR Desktop. RapidVideOCR Desktop需要搭配VideoSubFinder使用。它们两个关系如下图所示： flowchart LRA(VideoSubFinder) --提取字幕关键帧--&amp;gt; B(RapidVideOCR) --OCR--&amp;gt; C(SRT) VideoSubFinder使用教程 linkRapidVideOCR Desktop使用教程 link 下载对应平台的RapidVideOCR Desktop压缩包
+Github下载 QQ群共享文件下载，QQ群号：706807542， 或者扫码加入： 解压zip包，双击RapidVideOCR.exe（以Windows平台为例）
+界面如下图所示：
+界面各个部分介绍
+RapidVideOCR: 图像目录：指的是VideoSubFinder软件生成的RGBImages或者TXTImages目录，必须是这两个目录之一 保存路径：识别转换后的结果，包括srt文件和txt文件 叠图识别：勾选后，识别速度会变快。准确率可能差些 VideoSubFinder + RapidVideOCR: VSF exe路径：本地安装的VideoSubFinder全路径，例如:G:\ProgramFiles\VideoSubFinder_6.10_x64\Release_x64\VideoSubFinderWXW.exe 视频目录：想要提取硬字幕的视频所在目录 保存路径：保存提取结果的目录 上述都填好之后，点击OK按钮，即可开始识别。</description>
+    </item>
+    
+    <item>
+      <title>中级教程（python小白）</title>
+      <link>https://swhl.github.io/RapidVideOCR/docs/tutorial/intermediate/</link>
+      <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://swhl.github.io/RapidVideOCR/docs/tutorial/intermediate/</guid>
+      <description>引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: Windows | Mac | Linux 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以上部分图像来自终极保姆教程之安装python的教程_3.10.7版本
+下载python安装包
+打开python官网 → https://www.python.org，选择自己系统进入下载界面（VideoSubFinder工具目前只有Windows的） 找到自己想要的版本，以python 3.10.7 为例。如果网速下载较慢的话，可以加入RapidVideOCR QQ群（706807542），群文件获取。
+下载完成之后，双击打开这个exe，即可开始准备安装。点击自定义安装，选择安装位置。同时，记得勾选最后一项Add Python 3.10 to PATH
+直接点击下一步
+勾选改路径
+点击Install，等待安装完毕即可。
+Win + r 输入cmd，回车，进入命令窗口
+输入python，看是否出现类似下图样子，如出现，证明安装成功
+添加Scripts目录到环境变量中
+Win + q 输入“编辑” → 点击编辑系统环境变量
+打开环境变量 → 用户变量 → Path → 编辑
+新建Python安装目录下的Script目录路径，如下图所示，记得点击保存哈。
+3. 安装RapidVideOCR工具 link Win + r 输入cmd，回车，进入命令窗口
+输入pip install rapid_videocr -i https://pypi.douban.com/simple/ 安装RapidVideOCR
+测试是否安装成功，输入rapid_videocr -h,如果出现类似下图输出，则说明安装成功。</description>
+    </item>
+    
+    <item>
+      <title>高级教程（有python基础的小伙伴）</title>
+      <link>https://swhl.github.io/RapidVideOCR/docs/tutorial/senior/</link>
+      <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://swhl.github.io/RapidVideOCR/docs/tutorial/senior/</guid>
+      <description>安装使用VideoSubFinder软件
+下载地址：Windows &amp;amp; Linux (videosubfinder官网 / QQ群（706807542）共享文件) | Mac版 使用教程：VideoSubFinder提取字幕关键帧教程 最终生成的RGBImages和TXTImages目录一般会在软件安装目录下 ✧ 推荐用RGBImages目录中图像（感谢小伙伴dyphire在#21的反馈） 安装rapid_videocr
+pip install rapid_videocr 脚本运行：
+Only OCR Extract &amp;#43; OCR ```python {linenos=table}from rapid_videocr import RapidVideOCR# RapidVideOCR有两个初始化参数# is_concat_rec: 是否用单张图识别，默认是False，也就是默认用单图识别# concat_batch: 叠图识别的图像张数，默认10，可自行调节# out_format: 输出格式选择，[srt, txt, all], 默认是 all# is_print_console: 是否打印结果，[0, 1], 默认是0，不打印extractor = RapidVideOCR(is_concat_rec=False,out_format=&#39;all&#39;,is_print_console=False)# Windows端，需要这样写： rgb_dir = r&#39;G:\ProgramFiles\_self\RapidVideOCR\test_files\RGBImages&#39;# Linux / Mac 下面这样写rgb_dir = &#39;test_files/TXTImages&#39;save_dir = &#39;result&#39;extractor(rgb_dir, save_dir)``````python {linenos=table}from rapid_videocr import RapidVideoSubFinderOCRvsf_exe = r&amp;quot;G:\ProgramFiles\VideoSubFinder_6.</description>
+    </item>
+    
+  </channel>
+</rss>
