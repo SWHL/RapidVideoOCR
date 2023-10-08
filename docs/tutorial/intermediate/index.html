@@ -42,7 +42,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://swhl.github.io/RapidVideOCR/docs/tutorial/intermediate/" /><meta property="og:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3928855360629627390.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-10-08T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-10-08T16:55:18+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2023-10-08T16:56:12+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3928855360629627390.png"/>
 <meta name="twitter:title" content="中级教程（python小白）"/>
 <meta name="twitter:description" content="引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: `Windows | Mac | Linux`` 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以下部分图像来自终极保姆教程之安装python的教程_3.10.7版本
@@ -494,12 +494,12 @@
     <img src="https://camo.githubusercontent.com/f87a24d66de7a385e46a9dbd25940d4a735dc9b6f4cf36337adfc00785427b15/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f62326230393839383264636534373865383730323766613730303934323966302e706e67237069635f63656e746572">
 </div>
 <ol start="2">
-<li>输入<code>pip install rapid_videocr -i https://pypi.tuna.tsinghua.edu.cn/simple/</code> 安装RapidVideOCR</li>
-</ol>
-<div align="center">
-    <img src="https://camo.githubusercontent.com/154f1949fd26afedb1d577d01e1295c8f69279a04182b97f9da7092052e91888/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f31363136636562633066356534363161626562653562323062623437366439322e706e67237069635f63656e746572">
-</div>
-<ol start="3">
+<li>
+<p>输入<code>pip install rapid_videocr -i https://pypi.tuna.tsinghua.edu.cn/simple/</code> 安装RapidVideOCR</p>
+ <div align="center">
+     <img src="https://camo.githubusercontent.com/154f1949fd26afedb1d577d01e1295c8f69279a04182b97f9da7092052e91888/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f31363136636562633066356534363161626562653562323062623437366439322e706e67237069635f63656e746572">
+ </div>
+</li>
 <li>
 <p>测试是否安装成功，输入<code>rapid_videocr -h</code>,如果出现类似下图输出，则说明安装成功。</p>
  <div align="center">
@@ -581,14 +581,14 @@
 		
 
 		<a class="nav-link  active"
-		   id="fadcebTab" data-bs-toggle="tab" data-bs-target="#fadceb"
-		   type="button" role="tab" aria-controls="fadceb" aria-selected="true">Windows下路径写法</a>
+		   id="abecdfTab" data-bs-toggle="tab" data-bs-target="#abecdf"
+		   type="button" role="tab" aria-controls="abecdf" aria-selected="true">Windows下路径写法</a>
 
 		
 
 		<a class="nav-link "
-		   id="fdceabTab" data-bs-toggle="tab" data-bs-target="#fdceab"
-		   type="button" role="tab" aria-controls="fdceab" aria-selected="true">Linux/Mac下路径写法</a>
+		   id="caedfbTab" data-bs-toggle="tab" data-bs-target="#caedfb"
+		   type="button" role="tab" aria-controls="caedfb" aria-selected="true">Linux/Mac下路径写法</a>
 
 		
 
@@ -604,7 +604,7 @@
 
 
 
-<div class="tab-pane fade show active" id="fadceb" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="abecdf" role="tabpanel" aria-labelledby="nav-1">
 
 	<pre><code>    ```python {linenos=table}
     rgb_dir = r'G:\ProgramFiles\_self\RapidVideOCR\test_files\RGBImages'
@@ -619,7 +619,7 @@
 
 
 
-<div class="tab-pane fade" id="fdceab" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="caedfb" role="tabpanel" aria-labelledby="nav-1">
 
 	<pre><code>    ```python {linenos=table}
     rgb_dir = 'test_files/TXTImages'
@@ -657,9 +657,9 @@
 $ python rapid_videocr.py</code>
   </pre>
   </div>
-   <div align="center">
-       <img src="https://camo.githubusercontent.com/4a6b1382cb984f9192d882203cc59affef8302570e8104659201be86a75c158c/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f33323932623831616430313634326561396638316362373031396263333131382e706e67">
-   </div>
+<div align="center">
+   <img src="https://camo.githubusercontent.com/4a6b1382cb984f9192d882203cc59affef8302570e8104659201be86a75c158c/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f33323932623831616430313634326561396638316362373031396263333131382e706e67">
+</div>
 </li>
 </ol>
 </li>
@@ -701,9 +701,9 @@ $ python rapid_videocr.py</code>
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-10-08T16:55:18&#43;0800"
-            title="08 Oct 2023, 16:55 &#43;0800">
-            08 Oct 2023, 16:55 &#43;0800
+            data-authdate="2023-10-08T16:56:12&#43;0800"
+            title="08 Oct 2023, 16:56 &#43;0800">
+            08 Oct 2023, 16:56 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1028,7 +1028,7 @@ $ python rapid_videocr.py</code>
                 href: "\/RapidVideOCR\/docs\/tutorial\/intermediate\/",
                 title: "中级教程（python小白）",
                 description: "引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: `Windows | Mac | Linux`` 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以下部分图像来自终极保姆教程之安装python的教程_3.10.7版本\n1. 下载python安装包 link打开python官网 → https://www.python.org，选择自己系统进入下载界面（VideoSubFinder工具目前只有Windows的）\n2. 找到自己想要的版本， link以python 3.10.7 为例。如果网速下载较慢的话，可以加入RapidVideOCR QQ群（706807542），群文件获取。\n3. 下载完成之后，双击打开这个exe，即可开始准备安装。 link点击自定义安装，选择安装位置。同时，记得勾选最后一项Add Python 3.10 to PATH\n4. 直接点击下一步 link\r5. 勾选改路径 link\r6. 点击Install，等待安装完毕即可。 link\r7. Win + r 输入cmd，回车，进入命令窗口 link\r8. 输入python，看是否出现类似下图样子，如出现，证明安装成功 link\r9. 添加Scripts目录到环境变量中 link Win + q 输入“编辑” → 点击编辑系统环境变量\n打开环境变量 → 用户变量 → Path → 编辑",
-                content: "引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: `Windows | Mac | Linux`` 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以下部分图像来自终极保姆教程之安装python的教程_3.10.7版本\n1. 下载python安装包 link打开python官网 → https://www.python.org，选择自己系统进入下载界面（VideoSubFinder工具目前只有Windows的）\n2. 找到自己想要的版本， link以python 3.10.7 为例。如果网速下载较慢的话，可以加入RapidVideOCR QQ群（706807542），群文件获取。\n3. 下载完成之后，双击打开这个exe，即可开始准备安装。 link点击自定义安装，选择安装位置。同时，记得勾选最后一项Add Python 3.10 to PATH\n4. 直接点击下一步 link\r5. 勾选改路径 link\r6. 点击Install，等待安装完毕即可。 link\r7. Win + r 输入cmd，回车，进入命令窗口 link\r8. 输入python，看是否出现类似下图样子，如出现，证明安装成功 link\r9. 添加Scripts目录到环境变量中 link Win + q 输入“编辑” → 点击编辑系统环境变量\n打开环境变量 → 用户变量 → Path → 编辑\n新建Python安装目录下的Script目录路径，如下图所示，记得点击保存哈。\n3. 安装RapidVideOCR工具 link Win + r输入cmd，回车，进入命令窗口 输入pip install rapid_videocr -i https://pypi.tuna.tsinghua.edu.cn/simple/ 安装RapidVideOCR 测试是否安装成功，输入rapid_videocr -h,如果出现类似下图输出，则说明安装成功。\n命令行使用\nWin + r 输入cmd，回车，进入命令窗口\n输入rapid_videocr -i RGBImages -s result -m concat。其中RGBImages为VideoSubFinder软件生成，可以自定义，例如：G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages 等等。\n脚本使用\n在桌面上新建TXT文件，命名为rapid_videocr.py，注意后缀名改为*.py。\n用记事本打开，将以下代码拷贝到rapid_videocr.py里面\nfrom rapid_videocr import RapidVideOCR\r# RapidVideOCR有两个初始化参数\r# is_concat_rec: 是否用单张图识别，默认是False，也就是默认用单图识别\r# concat_batch: 叠图识别的图像张数，默认10，可自行调节\r# out_format: 输出格式选择，[srt, txt, all], 默认是 all\r# is_print_console: 是否打印结果，[0, 1], 默认是0，不打印\rextractor = RapidVideOCR(is_concat=False, out_format='all', is_print_console=False)\r# Windows: 路径前加了一个r\rrgb_dir = r'G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages'\r# Linux/Mac写法如下\rrgb_dir = 'test_files/TXTImages'\rsave_dir = 'result'\rextractor(rgb_dir, save_dir) 更改rgb_dir 后面的目录为VideoSubFinder生成的RGBImages目录路径。\nWindows下路径写法 Linux/Mac下路径写法 ```python {linenos=table}\rrgb_dir = r'G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages'\r```\r```python {linenos=table}\rrgb_dir = 'test_files/TXTImages'\r```\rWin + r 打开终端输入以下代码，回车执行即可。\n$ cd Desktop\r$ python rapid_videocr.py "
+                content: "引言 link 本篇文章旨在帮助不会python编程的小伙伴，快速使用RapidVideOCR视频硬字幕提取工具。 可以运行的操作系统: `Windows | Mac | Linux`` 配置环境 link1. 安装VideoSubFinder软件（用于提取字幕关键帧） link [RapidVideOCR周边] VideoSubFinder提取字幕关键帧教程 2. 安装python软件（用于运行RapidVideOCR） link info 声明：以下部分图像来自终极保姆教程之安装python的教程_3.10.7版本\n1. 下载python安装包 link打开python官网 → https://www.python.org，选择自己系统进入下载界面（VideoSubFinder工具目前只有Windows的）\n2. 找到自己想要的版本， link以python 3.10.7 为例。如果网速下载较慢的话，可以加入RapidVideOCR QQ群（706807542），群文件获取。\n3. 下载完成之后，双击打开这个exe，即可开始准备安装。 link点击自定义安装，选择安装位置。同时，记得勾选最后一项Add Python 3.10 to PATH\n4. 直接点击下一步 link\r5. 勾选改路径 link\r6. 点击Install，等待安装完毕即可。 link\r7. Win + r 输入cmd，回车，进入命令窗口 link\r8. 输入python，看是否出现类似下图样子，如出现，证明安装成功 link\r9. 添加Scripts目录到环境变量中 link Win + q 输入“编辑” → 点击编辑系统环境变量\n打开环境变量 → 用户变量 → Path → 编辑\n新建Python安装目录下的Script目录路径，如下图所示，记得点击保存哈。\n3. 安装RapidVideOCR工具 link Win + r输入cmd，回车，进入命令窗口 输入pip install rapid_videocr -i https://pypi.tuna.tsinghua.edu.cn/simple/ 安装RapidVideOCR\n测试是否安装成功，输入rapid_videocr -h,如果出现类似下图输出，则说明安装成功。\n命令行使用\nWin + r 输入cmd，回车，进入命令窗口\n输入rapid_videocr -i RGBImages -s result -m concat。其中RGBImages为VideoSubFinder软件生成，可以自定义，例如：G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages 等等。\n脚本使用\n在桌面上新建TXT文件，命名为rapid_videocr.py，注意后缀名改为*.py。\n用记事本打开，将以下代码拷贝到rapid_videocr.py里面\nfrom rapid_videocr import RapidVideOCR\r# RapidVideOCR有两个初始化参数\r# is_concat_rec: 是否用单张图识别，默认是False，也就是默认用单图识别\r# concat_batch: 叠图识别的图像张数，默认10，可自行调节\r# out_format: 输出格式选择，[srt, txt, all], 默认是 all\r# is_print_console: 是否打印结果，[0, 1], 默认是0，不打印\rextractor = RapidVideOCR(is_concat=False, out_format='all', is_print_console=False)\r# Windows: 路径前加了一个r\rrgb_dir = r'G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages'\r# Linux/Mac写法如下\rrgb_dir = 'test_files/TXTImages'\rsave_dir = 'result'\rextractor(rgb_dir, save_dir) 更改rgb_dir 后面的目录为VideoSubFinder生成的RGBImages目录路径。\nWindows下路径写法 Linux/Mac下路径写法 ```python {linenos=table}\rrgb_dir = r'G:\\ProgramFiles\\_self\\RapidVideOCR\\test_files\\RGBImages'\r```\r```python {linenos=table}\rrgb_dir = 'test_files/TXTImages'\r```\rWin + r 打开终端输入以下代码，回车执行即可。\n$ cd Desktop\r$ python rapid_videocr.py "
             }
         );
     index.add(
