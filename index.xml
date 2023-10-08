@@ -78,10 +78,7 @@ Win + q 输入“编辑” → 点击编辑系统环境变量
       <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://swhl.github.io/RapidVideOCR/docs/tutorial/senior/</guid>
-      <description>安装使用VideoSubFinder软件
-下载地址：Windows &amp;amp; Linux (videosubfinder官网 / QQ群（706807542）共享文件) | Mac版 使用教程：VideoSubFinder提取字幕关键帧教程 最终生成的RGBImages和TXTImages目录一般会在软件安装目录下 ✧ 推荐用RGBImages目录中图像（感谢小伙伴dyphire在#21的反馈） 安装rapid_videocr
-pip install rapid_videocr 脚本运行：
-Only OCR Extract &amp;#43; OCR ```python {linenos=table}from rapid_videocr import RapidVideOCR# RapidVideOCR有两个初始化参数# is_concat_rec: 是否用单张图识别，默认是False，也就是默认用单图识别# concat_batch: 叠图识别的图像张数，默认10，可自行调节# out_format: 输出格式选择，[srt, txt, all], 默认是 all# is_print_console: 是否打印结果，[0, 1], 默认是0，不打印extractor = RapidVideOCR(is_concat_rec=False,out_format=&#39;all&#39;,is_print_console=False)# Windows端，需要这样写： rgb_dir = r&#39;G:\ProgramFiles\_self\RapidVideOCR\test_files\RGBImages&#39;# Linux / Mac 下面这样写rgb_dir = &#39;test_files/TXTImages&#39;save_dir = &#39;result&#39;extractor(rgb_dir, save_dir)``````python {linenos=table}from rapid_videocr import RapidVideoSubFinderOCRvsf_exe = r&amp;quot;G:\ProgramFiles\VideoSubFinder_6.</description>
+      <description>1. 安装使用VideoSubFinder软件 link 下载地址：Windows &amp;amp; Linux (videosubfinder官网 / QQ群（706807542）共享文件) | Mac版 使用教程：VideoSubFinder提取字幕关键帧教程 最终生成的RGBImages和TXTImages目录一般会在软件安装目录下 ✧ 推荐用RGBImages目录中图像（感谢小伙伴dyphire在#21的反馈） 2. 安装rapid_videocr link pip install rapid_videocr 3. Python使用 link Only OCR Extract &amp;#43; OCR from rapid_videocr import RapidVideOCR# RapidVideOCR有两个初始化参数# is_concat_rec: 是否用单张图识别，默认是False，也就是默认用单图识别# concat_batch: 叠图识别的图像张数，默认10，可自行调节# out_format: 输出格式选择，[srt, txt, all], 默认是 all# is_print_console: 是否打印结果，[0, 1], 默认是0，不打印extractor = RapidVideOCR(is_concat_rec=False,out_format=&amp;#39;all&amp;#39;,is_print_console=False)# Windows端，需要这样写： rgb_dir = r&amp;#39;G:\ProgramFiles\_self\RapidVideOCR\test_files\RGBImages&amp;#39;# Linux / Mac 下面这样写rgb_dir = &amp;#39;test_files/TXTImages&amp;#39;save_dir = &amp;#39;result&amp;#39;extractor(rgb_dir, save_dir) from rapid_videocr import RapidVideoSubFinderOCRvsf_exe = r&amp;#34;G:\ProgramFiles\VideoSubFinder_6.</description>
     </item>
     
     <item>
