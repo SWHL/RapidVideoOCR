@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客 on RapidVideOCR Documentation</title>
+    <link>https://swhl.github.io/RapidVideOCR/docs/blog/</link>
+    <description>Recent content in 博客 on RapidVideOCR Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://swhl.github.io/RapidVideOCR/docs/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何识别除中英文以外的其他字幕语言？</title>
+      <link>https://swhl.github.io/RapidVideOCR/docs/blog/-rec_other_lan/</link>
+      <pubDate>Sun, 08 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://swhl.github.io/RapidVideOCR/docs/blog/-rec_other_lan/</guid>
+      <description>引言 link 当前，RapidVideOCR是直接使用的rapidocr_onnxruntime的默认配置，因此仅能识别中英文的字幕文字。 由于rapidocr_onnxruntime具备传入其他多语言识别模型，因此RapidVieOCR具备了可扩展性，本篇文章特此来说明如何操作使用。 本篇文章以discussions #40中提出的识别法语字幕为例说明，其他语种同理可得。 1. 正确安装使用RapidVideOCR link请参考link
+2. 借助PaddleOCRConvert工具来转换法语识别模型为ONNX link notifications 参考教程link
+其中，
+模型路径：https://paddleocr.bj.bcebos.com/dygraph_v2.0/multilingual/french_mobile_v2.0_rec_infer.tar， 字典路径：https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/dygraph/ppocr/utils/dict/french_dict.txt 其他语言的模型下载地址参见：paddleocr whl源码中paddleocr.py文件中
+字典链接参见：link
+最终可以得到一个法语识别模型：french_mobile_v2.0_rec_infer.onnx
+3. 识别法语字幕 link notifications rapid_videocr&amp;gt;=v2.2.8 from rapid_videocr import RapidVideOCRextractor = RapidVideOCR(rec_model_path=&amp;#34;french_mobile_v2.0_rec_infer.onnx&amp;#34;)rgb_dir = &amp;#34;test_files/RGBImagesTiny&amp;#34;save_dir = &amp;#34;outputs&amp;#34;save_name = &amp;#34;a&amp;#34;# outputs/a.srt outputs/a.txtextractor(rgb_dir, save_dir, save_name=save_name) </description>
+    </item>
+    
+  </channel>
+</rss>

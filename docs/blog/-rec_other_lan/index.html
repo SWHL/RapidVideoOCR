@@ -18,7 +18,7 @@
 
 <html lang="en-us"><head>
     <meta charset="utf-8" />
-    <title>更新日志 | RapidVideOCR Documentation</title>
+    <title>如何识别除中英文以外的其他字幕语言？ | RapidVideOCR Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
     <meta name="author" content="Colin Wilson - Lotus Labs" />
@@ -32,15 +32,27 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://swhl.github.io/RapidVideOCR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://swhl.github.io/RapidVideOCR/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://swhl.github.io/RapidVideOCR/site.webmanifest">
-<meta property="og:title" content="更新日志" />
-<meta property="og:description" content="🚩2023-10-08 v2.2.8 update: link 适配rapidocr_onnxruntime的相关参数，可以通过RapidVideOCR类传入，从而更加灵活指定不同语言的模型。 ♦ 2023-08-05 v2.2.4 update: link 修复批量识别模式下，索引错误。 添加日志记录模块，便于使用桌面版，快速记录问题，便于反馈。 🛶2023-07-19 v2.2.3 update: link 增加对VSF的参数的适配，命令行模式和类初始化时，可以指定VSF命令的同名参数。详细使用参见link 🤓2023-07-08 v2.2.2 update: link 修复批量识别时，不能读取中文路径的问题 修复漏轴时，SRT中跳过问题。目前当出现某一轴未能识别，则会空出位置，便于校对。 保留VSF识别的中间结果 🐲2023-06-22 v2.2.0 update: link 该版本是向v2.1.x兼容的，也就是之前用法依然可以。 将VSF的CLI整合到库中，只需指定VideoSubFinderWXW.exe的全路径即可。 增加批量识别功能，指定视频目录，即可自动提取目录下所有视频字幕 使用示例, 参见：demo.py 😀2023-05-12 v2.1.7 update: link 优化代码 添加save_name参数，可以灵活指定保存的srt | txt文件名称，默认是result 🐱2023-03-27 v2.1.6 update: link 修复时间轴对不齐问题，详情参见issue 23 👽2023-03-23 v2.1.5 update: link 添加打印到屏幕的控制参数is_print_console 调整out_format参数位置到初始化类时 😀2023-03-14 v2.1.3 update: link 修复输入TXTImages目录且叠字识别时错误 😜2023-03-12 v2.1.2 update: link 修复索引错误，#22 🎢2023-03-11 v2.1.1 update: link 修复单图识别与之前版本差异问题 默认识别模式更改为单图识别，是否使用叠图识别，请自行决定 🥇2023-03-10 v2." />
+<meta property="og:title" content="如何识别除中英文以外的其他字幕语言？" />
+<meta property="og:description" content="引言 link 当前，RapidVideOCR是直接使用的rapidocr_onnxruntime的默认配置，因此仅能识别中英文的字幕文字。 由于rapidocr_onnxruntime具备传入其他多语言识别模型，因此RapidVieOCR具备了可扩展性，本篇文章特此来说明如何操作使用。 本篇文章以discussions #40中提出的识别法语字幕为例说明，其他语种同理可得。 1. 正确安装使用RapidVideOCR link请参考link
+2. 借助PaddleOCRConvert工具来转换法语识别模型为ONNX link notifications 参考教程link
+其中，
+模型路径：https://paddleocr.bj.bcebos.com/dygraph_v2.0/multilingual/french_mobile_v2.0_rec_infer.tar， 字典路径：https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/dygraph/ppocr/utils/dict/french_dict.txt 其他语言的模型下载地址参见：paddleocr whl源码中paddleocr.py文件中
+字典链接参见：link
+最终可以得到一个法语识别模型：french_mobile_v2.0_rec_infer.onnx
+3. 识别法语字幕 link notifications rapid_videocr&gt;=v2.2.8 from rapid_videocr import RapidVideOCRextractor = RapidVideOCR(rec_model_path=&#34;french_mobile_v2.0_rec_infer.onnx&#34;)rgb_dir = &#34;test_files/RGBImagesTiny&#34;save_dir = &#34;outputs&#34;save_name = &#34;a&#34;# outputs/a.srt outputs/a.txtextractor(rgb_dir, save_dir, save_name=save_name) " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://swhl.github.io/RapidVideOCR/docs/changelog/" /><meta property="og:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_9848466877468498145.png"/><meta property="article:section" content="docs" />
-
+<meta property="og:url" content="https://swhl.github.io/RapidVideOCR/docs/blog/-rec_other_lan/" /><meta property="og:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_12378799788235873749.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-10-08T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-10-08T19:27:36+08:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_9848466877468498145.png"/>
-<meta name="twitter:title" content="更新日志"/>
-<meta name="twitter:description" content="🚩2023-10-08 v2.2.8 update: link 适配rapidocr_onnxruntime的相关参数，可以通过RapidVideOCR类传入，从而更加灵活指定不同语言的模型。 ♦ 2023-08-05 v2.2.4 update: link 修复批量识别模式下，索引错误。 添加日志记录模块，便于使用桌面版，快速记录问题，便于反馈。 🛶2023-07-19 v2.2.3 update: link 增加对VSF的参数的适配，命令行模式和类初始化时，可以指定VSF命令的同名参数。详细使用参见link 🤓2023-07-08 v2.2.2 update: link 修复批量识别时，不能读取中文路径的问题 修复漏轴时，SRT中跳过问题。目前当出现某一轴未能识别，则会空出位置，便于校对。 保留VSF识别的中间结果 🐲2023-06-22 v2.2.0 update: link 该版本是向v2.1.x兼容的，也就是之前用法依然可以。 将VSF的CLI整合到库中，只需指定VideoSubFinderWXW.exe的全路径即可。 增加批量识别功能，指定视频目录，即可自动提取目录下所有视频字幕 使用示例, 参见：demo.py 😀2023-05-12 v2.1.7 update: link 优化代码 添加save_name参数，可以灵活指定保存的srt | txt文件名称，默认是result 🐱2023-03-27 v2.1.6 update: link 修复时间轴对不齐问题，详情参见issue 23 👽2023-03-23 v2.1.5 update: link 添加打印到屏幕的控制参数is_print_console 调整out_format参数位置到初始化类时 😀2023-03-14 v2.1.3 update: link 修复输入TXTImages目录且叠字识别时错误 😜2023-03-12 v2.1.2 update: link 修复索引错误，#22 🎢2023-03-11 v2.1.1 update: link 修复单图识别与之前版本差异问题 默认识别模式更改为单图识别，是否使用叠图识别，请自行决定 🥇2023-03-10 v2."/>
+<meta name="twitter:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_12378799788235873749.png"/>
+<meta name="twitter:title" content="如何识别除中英文以外的其他字幕语言？"/>
+<meta name="twitter:description" content="引言 link 当前，RapidVideOCR是直接使用的rapidocr_onnxruntime的默认配置，因此仅能识别中英文的字幕文字。 由于rapidocr_onnxruntime具备传入其他多语言识别模型，因此RapidVieOCR具备了可扩展性，本篇文章特此来说明如何操作使用。 本篇文章以discussions #40中提出的识别法语字幕为例说明，其他语种同理可得。 1. 正确安装使用RapidVideOCR link请参考link
+2. 借助PaddleOCRConvert工具来转换法语识别模型为ONNX link notifications 参考教程link
+其中，
+模型路径：https://paddleocr.bj.bcebos.com/dygraph_v2.0/multilingual/french_mobile_v2.0_rec_infer.tar， 字典路径：https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/dygraph/ppocr/utils/dict/french_dict.txt 其他语言的模型下载地址参见：paddleocr whl源码中paddleocr.py文件中
+字典链接参见：link
+最终可以得到一个法语识别模型：french_mobile_v2.0_rec_infer.onnx
+3. 识别法语字幕 link notifications rapid_videocr&gt;=v2.2.8 from rapid_videocr import RapidVideOCRextractor = RapidVideOCR(rec_model_path=&#34;french_mobile_v2.0_rec_infer.onnx&#34;)rgb_dir = &#34;test_files/RGBImagesTiny&#34;save_dir = &#34;outputs&#34;save_name = &#34;a&#34;# outputs/a.srt outputs/a.txtextractor(rgb_dir, save_dir, save_name=save_name) "/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -156,17 +168,17 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
+                        <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">article</i>
                                 博客
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
                                         
-                                            <li class=" "><a class="sidebar-nested-link" href="https://swhl.github.io/RapidVideOCR/docs/blog/-rec_other_lan/">如何识别除中英文以外的其他字幕语言？</a></li>
+                                            <li class="current "><a class="sidebar-nested-link" href="https://swhl.github.io/RapidVideOCR/docs/blog/-rec_other_lan/">如何识别除中英文以外的其他字幕语言？</a></li>
                                         
                                     
                                 </ul>
@@ -198,7 +210,7 @@
                 
                     
                         
-                        <li class="current">
+                        <li class="">
                             <a class="sidebar-root-link" href="https://swhl.github.io/RapidVideOCR/docs/changelog/">
                                 <i class="material-icons me-2">update</i>
                                 
@@ -344,10 +356,18 @@
                     <meta itemprop="position" content='1' />
                 </li>
             
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/RapidVideOCR/docs/blog/">
+                        <span itemprop="name">博客</span>
+                    </a>
+                    <meta itemprop="position" content='2' />
+                </li>
+            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">更新日志</span>
-                <meta itemprop="position" content='2' />
+                <span itemprop="name">如何识别除中英文以外的其他字幕语言？</span>
+                <meta itemprop="position" content='3' />
             </li>
         
     </ul>
@@ -363,35 +383,10 @@
       <ul>
         <li>
           <ul>
-            <li>
-              <ul>
-                <li><a href="#2023-10-08-v228-update">🚩2023-10-08 v2.2.8 update:</a></li>
-                <li><a href="#-2023-08-05-v224-update">♦ 2023-08-05 v2.2.4 update:</a></li>
-                <li><a href="#2023-07-19-v223-update">🛶2023-07-19 v2.2.3 update:</a></li>
-                <li><a href="#2023-07-08-v222-update">🤓2023-07-08 v2.2.2 update:</a></li>
-                <li><a href="#2023-06-22-v220-update">🐲2023-06-22 v2.2.0 update:</a></li>
-                <li><a href="#2023-05-12-v217-update">😀2023-05-12 v2.1.7 update:</a></li>
-                <li><a href="#2023-03-27-v216-update">🐱2023-03-27 v2.1.6 update:</a></li>
-                <li><a href="#2023-03-23-v215-update">👽2023-03-23 v2.1.5 update:</a></li>
-                <li><a href="#2023-03-14-v213-update">😀2023-03-14 v2.1.3 update:</a></li>
-                <li><a href="#2023-03-12-v212-update">😜2023-03-12 v2.1.2 update:</a></li>
-                <li><a href="#2023-03-11-v211-update">🎢2023-03-11 v2.1.1 update:</a></li>
-                <li><a href="#2023-03-10-v210-update">🥇2023-03-10 v2.1.0 update:</a></li>
-                <li><a href="#2023-03-02-v2057-update">🎈2023-03-02 v2.0.5~7 update:</a></li>
-                <li><a href="#2023-02-17-v204-update">🎫2023-02-17 v2.0.4 update:</a></li>
-                <li><a href="#2023-02-17-v202-update">💎2023-02-17 v2.0.2 update:</a></li>
-                <li><a href="#2023-01-29-v1110-update">🎈2023-01-29 v1.1.10 update:</a></li>
-                <li><a href="#2023-01-28-v119-update">🧨2023-01-28 v1.1.9 update:</a></li>
-                <li><a href="#-2023-01-15-v114-update">👊 2023-01-15 v1.1.4 update:</a></li>
-                <li><a href="#2023-01-10-v103-update">🌈2023-01-10 v1.0.3 update:</a></li>
-                <li><a href="#2022-12-04-update">🎄2022-12-04 update:</a></li>
-                <li><a href="#2022-05-08-update">🌼2022-05-08 update:</a></li>
-                <li><a href="#2022-05-03-update">🎉2022-05-03 update:</a></li>
-                <li><a href="#2022-05-01-update">💡2022-05-01 update:</a></li>
-                <li><a href="#2022-03-09-update">2022-03-09 update:</a></li>
-                <li><a href="#2021-12-14-update">2021-12-14 update:</a></li>
-              </ul>
-            </li>
+            <li><a href="#引言">引言</a></li>
+            <li><a href="#1-正确安装使用rapidvideocr">1. 正确安装使用RapidVideOCR</a></li>
+            <li><a href="#2-借助paddleocrconvert工具来转换法语识别模型为onnx">2. 借助PaddleOCRConvert工具来转换法语识别模型为ONNX</a></li>
+            <li><a href="#3-识别法语字幕">3. 识别法语字幕</a></li>
           </ul>
         </li>
       </ul>
@@ -411,35 +406,10 @@
       <ul>
         <li>
           <ul>
-            <li>
-              <ul>
-                <li><a href="#2023-10-08-v228-update">🚩2023-10-08 v2.2.8 update:</a></li>
-                <li><a href="#-2023-08-05-v224-update">♦ 2023-08-05 v2.2.4 update:</a></li>
-                <li><a href="#2023-07-19-v223-update">🛶2023-07-19 v2.2.3 update:</a></li>
-                <li><a href="#2023-07-08-v222-update">🤓2023-07-08 v2.2.2 update:</a></li>
-                <li><a href="#2023-06-22-v220-update">🐲2023-06-22 v2.2.0 update:</a></li>
-                <li><a href="#2023-05-12-v217-update">😀2023-05-12 v2.1.7 update:</a></li>
-                <li><a href="#2023-03-27-v216-update">🐱2023-03-27 v2.1.6 update:</a></li>
-                <li><a href="#2023-03-23-v215-update">👽2023-03-23 v2.1.5 update:</a></li>
-                <li><a href="#2023-03-14-v213-update">😀2023-03-14 v2.1.3 update:</a></li>
-                <li><a href="#2023-03-12-v212-update">😜2023-03-12 v2.1.2 update:</a></li>
-                <li><a href="#2023-03-11-v211-update">🎢2023-03-11 v2.1.1 update:</a></li>
-                <li><a href="#2023-03-10-v210-update">🥇2023-03-10 v2.1.0 update:</a></li>
-                <li><a href="#2023-03-02-v2057-update">🎈2023-03-02 v2.0.5~7 update:</a></li>
-                <li><a href="#2023-02-17-v204-update">🎫2023-02-17 v2.0.4 update:</a></li>
-                <li><a href="#2023-02-17-v202-update">💎2023-02-17 v2.0.2 update:</a></li>
-                <li><a href="#2023-01-29-v1110-update">🎈2023-01-29 v1.1.10 update:</a></li>
-                <li><a href="#2023-01-28-v119-update">🧨2023-01-28 v1.1.9 update:</a></li>
-                <li><a href="#-2023-01-15-v114-update">👊 2023-01-15 v1.1.4 update:</a></li>
-                <li><a href="#2023-01-10-v103-update">🌈2023-01-10 v1.0.3 update:</a></li>
-                <li><a href="#2022-12-04-update">🎄2022-12-04 update:</a></li>
-                <li><a href="#2022-05-08-update">🌼2022-05-08 update:</a></li>
-                <li><a href="#2022-05-03-update">🎉2022-05-03 update:</a></li>
-                <li><a href="#2022-05-01-update">💡2022-05-01 update:</a></li>
-                <li><a href="#2022-03-09-update">2022-03-09 update:</a></li>
-                <li><a href="#2021-12-14-update">2021-12-14 update:</a></li>
-              </ul>
-            </li>
+            <li><a href="#引言">引言</a></li>
+            <li><a href="#1-正确安装使用rapidvideocr">1. 正确安装使用RapidVideOCR</a></li>
+            <li><a href="#2-借助paddleocrconvert工具来转换法语识别模型为onnx">2. 借助PaddleOCRConvert工具来转换法语识别模型为ONNX</a></li>
+            <li><a href="#3-识别法语字幕">3. 识别法语字幕</a></li>
           </ul>
         </li>
       </ul>
@@ -450,7 +420,7 @@
                                         <div class="mb-0 d-flex">
                                             
                                             <h1 class="content-title mb-0">
-                                                更新日志
+                                                如何识别除中英文以外的其他字幕语言？
                                                 
                                             </h1>
                                         </div>
@@ -461,108 +431,69 @@
                                             
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h4 id="2023-10-08-v228-update">🚩2023-10-08 v2.2.8 update: <a href="#2023-10-08-v228-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>适配<code>rapidocr_onnxruntime</code>的相关参数，可以通过RapidVideOCR类传入，从而更加灵活指定不同语言的模型。</li>
+        <h3 id="引言">引言 <a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>当前，RapidVideOCR是直接使用的<code>rapidocr_onnxruntime</code>的默认配置，因此仅能识别中英文的字幕文字。</li>
+<li>由于<code>rapidocr_onnxruntime</code>具备传入其他多语言识别模型，因此RapidVieOCR具备了可扩展性，本篇文章特此来说明如何操作使用。</li>
+<li>本篇文章以<a href="https://github.com/SWHL/RapidVideOCR/discussions/40" rel="external" target="_blank">discussions #40<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>中提出的识别法语字幕为例说明，其他语种同理可得。</li>
 </ul>
-<h4 id="-2023-08-05-v224-update">♦ 2023-08-05 v2.2.4 update: <a href="#-2023-08-05-v224-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复批量识别模式下，索引错误。</li>
-<li>添加日志记录模块，便于使用桌面版，快速记录问题，便于反馈。</li>
-</ul>
-<h4 id="2023-07-19-v223-update">🛶2023-07-19 v2.2.3 update: <a href="#2023-07-19-v223-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>增加对VSF的参数的适配，命令行模式和类初始化时，可以指定VSF命令的同名参数。详细使用参见<a href="https://github.com/SWHL/RapidVideOCR/wiki/RapidVideOCR%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%EF%BC%88%E6%9C%89python%E5%9F%BA%E7%A1%80%E7%9A%84%E5%B0%8F%E4%BC%99%E4%BC%B4%EF%BC%89" rel="external" target="_blank">link<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-</ul>
-<h4 id="2023-07-08-v222-update">🤓2023-07-08 v2.2.2 update: <a href="#2023-07-08-v222-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复批量识别时，不能读取中文路径的问题</li>
-<li>修复漏轴时，SRT中跳过问题。目前当出现某一轴未能识别，则会空出位置，便于校对。</li>
-<li>保留VSF识别的中间结果</li>
-</ul>
-<h4 id="2023-06-22-v220-update">🐲2023-06-22 v2.2.0 update: <a href="#2023-06-22-v220-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>该版本是向<code>v2.1.x</code>兼容的，也就是之前用法依然可以。</li>
-<li>将VSF的CLI整合到库中，只需指定<code>VideoSubFinderWXW.exe</code>的全路径即可。</li>
-<li>增加批量识别功能，指定视频目录，即可自动提取目录下所有视频字幕</li>
-<li>使用示例, 参见：<a href="https://github.com/SWHL/RapidVideOCR/blob/main/demo.py" rel="external" target="_blank">demo.py<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-</ul>
-<h4 id="2023-05-12-v217-update">😀2023-05-12 v2.1.7 update: <a href="#2023-05-12-v217-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>优化代码</li>
-<li>添加<code>save_name</code>参数，可以灵活指定保存的<code>srt | txt</code>文件名称，默认是<code>result</code></li>
-</ul>
-<h4 id="2023-03-27-v216-update">🐱2023-03-27 v2.1.6 update: <a href="#2023-03-27-v216-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复时间轴对不齐问题，详情参见<a href="https://github.com/SWHL/RapidVideOCR/issues/23" rel="external" target="_blank">issue 23<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-</ul>
-<h4 id="2023-03-23-v215-update">👽2023-03-23 v2.1.5 update: <a href="#2023-03-23-v215-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>添加打印到屏幕的控制参数<code>is_print_console</code></li>
-<li>调整<code>out_format</code>参数位置到初始化类时</li>
-</ul>
-<h4 id="2023-03-14-v213-update">😀2023-03-14 v2.1.3 update: <a href="#2023-03-14-v213-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复输入<code>TXTImages</code>目录且叠字识别时错误</li>
-</ul>
-<h4 id="2023-03-12-v212-update">😜2023-03-12 v2.1.2 update: <a href="#2023-03-12-v212-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复索引错误，<a href="https://github.com/SWHL/RapidVideOCR/issues/22" rel="external" target="_blank">#22<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-</ul>
-<h4 id="2023-03-11-v211-update">🎢2023-03-11 v2.1.1 update: <a href="#2023-03-11-v211-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复单图识别与之前版本差异问题</li>
-<li>默认识别模式更改为单图识别，是否使用叠图识别，请自行决定</li>
-</ul>
-<h4 id="2023-03-10-v210-update">🥇2023-03-10 v2.1.0 update: <a href="#2023-03-10-v210-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>添加叠字识别功能，速度更快，默认是叠字识别功能</li>
-</ul>
-<h4 id="2023-03-02-v2057-update">🎈2023-03-02 v2.0.5~7 update: <a href="#2023-03-02-v2057-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复生成的srt文件中的格式错误， <a href="https://github.com/SWHL/RapidVideOCR/issues/19" rel="external" target="_blank">#19<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-</ul>
-<h4 id="2023-02-17-v204-update">🎫2023-02-17 v2.0.4 update: <a href="#2023-02-17-v204-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>针对传入的<code>TXTImages</code>目录，作了优化处理。相比于传入<code>RGBImages</code>，会更快和更准。推荐传入<code>TXTImages</code>目录</li>
-</ul>
-<h4 id="2023-02-17-v202-update">💎2023-02-17 v2.0.2 update: <a href="#2023-02-17-v202-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复同行字幕识别丢失空格问题</li>
-</ul>
-<h4 id="2023-01-29-v1110-update">🎈2023-01-29 v1.1.10 update: <a href="#2023-01-29-v1110-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复帧索引转时间戳时，索引为空错误</li>
-</ul>
-<h4 id="2023-01-28-v119-update">🧨2023-01-28 v1.1.9 update: <a href="#2023-01-28-v119-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>修复时间轴对不齐问题</li>
-</ul>
-<h4 id="-2023-01-15-v114-update">👊 2023-01-15 v1.1.4 update: <a href="#-2023-01-15-v114-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>添加输出txt格式的选项，目前v1.1.4版本默认输出srt和txt两种格式</li>
-<li>添加根据运行程序屏幕大小，调节选择字幕的框大小</li>
-</ul>
-<h4 id="2023-01-10-v103-update">🌈2023-01-10 v1.0.3 update: <a href="#2023-01-10-v103-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>将decord替换为OpenCV，因为decord处理MP4时，存在内存泄漏问题。详情参见：<a href="https://github.com/dmlc/decord/issues/208" rel="external" target="_blank">#208<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-</ul>
-<h4 id="2022-12-04-update">🎄2022-12-04 update: <a href="#2022-12-04-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>添加交互式框定字幕位置功能，默认开启，更加好用，详情可参考下面的GIF图。感谢@<a href="https://github.com/Johndirr" rel="external" target="_blank">Johndirr<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>的建议。</li>
-<li>优化代码结构，将RapidOCR相关模型和配置文件放到<code>rapidocr</code>目录下</li>
-<li><code>rapidvideocr</code>的配置文件也放到对应目录下</li>
-</ul>
-<h4 id="2022-05-08-update">🌼2022-05-08 update: <a href="#2022-05-08-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>添加交互式确定二值化字幕图像阈值操作，仅仅支持Windows系统，可以通过<code>is_select_threshold = True</code>来使用</li>
-<li>优化代码</li>
-</ul>
-<h4 id="2022-05-03-update">🎉2022-05-03 update: <a href="#2022-05-03-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>添加GPU支持，具体配置教程参见：<a href="https://github.com/RapidAI/RapidOCR/blob/main/python/onnxruntime_infer/README.md#onnxruntime-gpu%E7%89%88%E6%8E%A8%E7%90%86%E9%85%8D%E7%BD%AE" rel="external" target="_blank">onnxruntime-gpu版推理配置<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-<li>添加日文的支持，可以支持更多语种，具体参见：<a href="https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.1/doc/doc_ch/multi_languages.md#%E8%AF%AD%E7%A7%8D%E7%BC%A9%E5%86%99" rel="external" target="_blank">支持语种列表<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-</ul>
-<h4 id="2022-05-01-update">💡2022-05-01 update: <a href="#2022-05-01-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>添加语音模块部分位于分支<code>asr_module</code></li>
-<li>添加语音识别模块，由于该模块中解码部分只能在Linux和Mac上运行，因此如果想要使用该模块，请在Linux和Mac上。</li>
-<li>目前语音识别代码来自<a href="https://github.com/RapidAI/RapidASR/tree/main/python/base_paddlespeech" rel="external" target="_blank">RapidASR/python<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>部分。模型来自<a href="https://github.com/PaddlePaddle/PaddleSpeech/tree/develop/examples/aishell/asr0" rel="external" target="_blank">PaddleSpeech<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></li>
-<li>经过简单测试，语音识别模块不是太准。-_-!</li>
-</ul>
-<h4 id="2022-03-09-update">2022-03-09 update: <a href="#2022-03-09-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li>添加<a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/RapidVideOCR/docs/faq/'><p>DOCS</p><strong>常见问题</strong><br></a>" data-bs-toggle="tooltip" href="/RapidVideOCR/docs/faq/">常见问题模块</a>，可以帮助大家跳过常见的小问题</li>
-</ul>
-<h4 id="2021-12-14-update">2021-12-14 update: <a href="#2021-12-14-update" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
-<li><input checked="" disabled="" type="checkbox"> 背景去除效果不好，导致丢失某些帧
+<h3 id="1-正确安装使用rapidvideocr">1. 正确安装使用RapidVideOCR <a href="#1-%e6%ad%a3%e7%a1%ae%e5%ae%89%e8%a3%85%e4%bd%bf%e7%94%a8rapidvideocr" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>请参考<a href="https://swhl.github.io/RapidVideOCR/docs/tutorial/senior/" rel="external" target="_blank">link<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+<h3 id="2-借助paddleocrconvert工具来转换法语识别模型为onnx">2. 借助PaddleOCRConvert工具来转换法语识别模型为ONNX <a href="#2-%e5%80%9f%e5%8a%a9paddleocrconvert%e5%b7%a5%e5%85%b7%e6%9d%a5%e8%bd%ac%e6%8d%a2%e6%b3%95%e8%af%ad%e8%af%86%e5%88%ab%e6%a8%a1%e5%9e%8b%e4%b8%baonnx" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+<div class="alert alert-default d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  
+  <span class="material-icons size-20 me-2">
+  notifications
+  </span></div>
+  
+  <div class="w-100"><p>参考教程<a href="https://github.com/RapidAI/PaddleOCRModelConvert" rel="external" target="_blank">link<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+</div>
+  </div>
+<p>其中，</p>
 <ul>
-<li>尝试采用图像分割的方法，经过测试，CPU下推理速度太慢，暂时放弃</li>
-<li>目前采用的固定的二值化阈值</li>
+<li>模型路径：<code>https://paddleocr.bj.bcebos.com/dygraph_v2.0/multilingual/french_mobile_v2.0_rec_infer.tar</code>，</li>
+<li>字典路径：<code>https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/dygraph/ppocr/utils/dict/french_dict.txt</code></li>
 </ul>
-</li>
-<li><input checked="" disabled="" type="checkbox"> (2021-12-14)完善对应的英文文档</li>
-<li><input checked="" disabled="" type="checkbox"> (2021-12-14)添加运行耗时基准</li>
-<li><input checked="" disabled="" type="checkbox"> 添加具体参数说明</li>
-<li><input checked="" disabled="" type="checkbox"> 制作项目Logo</li>
-<li><input disabled="" type="checkbox"> 更多的测试</li>
-</ul>
+<p>其他语言的模型下载地址参见：<a href="https://files.pythonhosted.org/packages/8f/d0/1a2f9430f61781beb16556182baa938e8f93c8b46c27ad5865a5655fae05/paddleocr-2.7.0.3-py3-none-any.whl" rel="external" target="_blank">paddleocr whl<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>源码中<code>paddleocr.py</code>文件中</p>
+<p>字典链接参见：<a href="https://github.com/PaddlePaddle/PaddleOCR/tree/799c144ab3b0b5d19a37c7e85c47e88ff27c643d/ppocr/utils/dict" rel="external" target="_blank">link<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+<p>最终可以得到一个法语识别模型：<code>french_mobile_v2.0_rec_infer.onnx</code></p>
+<h3 id="3-识别法语字幕">3. 识别法语字幕 <a href="#3-%e8%af%86%e5%88%ab%e6%b3%95%e8%af%ad%e5%ad%97%e5%b9%95" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+<div class="alert alert-default d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+  
+  <span class="material-icons size-20 me-2">
+  notifications
+  </span></div>
+  
+  <div class="w-100"><code>rapid_videocr&gt;=v2.2.8</code></div>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="d2a22d5" class="language-python ">
+  <code>from rapid_videocr import RapidVideOCR
+
+extractor = RapidVideOCR(rec_model_path=&#34;french_mobile_v2.0_rec_infer.onnx&#34;)
+
+rgb_dir = &#34;test_files/RGBImagesTiny&#34;
+save_dir = &#34;outputs&#34;
+save_name = &#34;a&#34;
+
+# outputs/a.srt  outputs/a.txt
+extractor(rgb_dir, save_dir, save_name=save_name)</code>
+  </pre>
+  </div>
 
     </div>
 
@@ -582,7 +513,7 @@
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/SWHL/RapidVideOCR/blob/main/content/docs/changelog.md" alt="更新日志" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/SWHL/RapidVideOCR/blob/main/content/docs/blog/%20rec_other_lan.md" alt="如何识别除中英文以外的其他字幕语言？" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -618,11 +549,22 @@
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/RapidVideOCR/docs/faq/">
+		<a href="/RapidVideOCR/docs/tutorial/senior/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 常见问题</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 高级教程（有python基础的小伙伴）</p>
 					<p class="card-text ms-2"></p>
+					
+				</div>
+			</div>
+		</a>
+        </div>
+	<div class="col-sm-6 pt-2 doc-prev">
+		<a class="ms-auto" href="/RapidVideOCR/docs/sponsor/">
+			<div class="card h-100 my-1 text-end">
+				<div class="card-body py-2">
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">给作者加油 <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2"></p>
 					
 				</div>
 			</div>
