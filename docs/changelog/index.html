@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://swhl.github.io/RapidVideOCR/docs/changelog/" /><meta property="og:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_9848466877468498145.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-10-08T19:27:36+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2024-04-24T12:50:57+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://swhl.github.io/RapidVideOCR/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_9848466877468498145.png"/>
 <meta name="twitter:title" content="更新日志"/>
 <meta name="twitter:description" content="🚩2023-10-08 v2.2.8 update: link 适配rapidocr_onnxruntime的相关参数，可以通过RapidVideOCR类传入，从而更加灵活指定不同语言的模型。 ♦ 2023-08-05 v2.2.4 update: link 修复批量识别模式下，索引错误。 添加日志记录模块，便于使用桌面版，快速记录问题，便于反馈。 🛶2023-07-19 v2.2.3 update: link 增加对VSF的参数的适配，命令行模式和类初始化时，可以指定VSF命令的同名参数。详细使用参见link 🤓2023-07-08 v2.2.2 update: link 修复批量识别时，不能读取中文路径的问题 修复漏轴时，SRT中跳过问题。目前当出现某一轴未能识别，则会空出位置，便于校对。 保留VSF识别的中间结果 🐲2023-06-22 v2.2.0 update: link 该版本是向v2.1.x兼容的，也就是之前用法依然可以。 将VSF的CLI整合到库中，只需指定VideoSubFinderWXW.exe的全路径即可。 增加批量识别功能，指定视频目录，即可自动提取目录下所有视频字幕 使用示例, 参见：demo.py 😀2023-05-12 v2.1.7 update: link 优化代码 添加save_name参数，可以灵活指定保存的srt | txt文件名称，默认是result 🐱2023-03-27 v2.1.6 update: link 修复时间轴对不齐问题，详情参见issue 23 👽2023-03-23 v2.1.5 update: link 添加打印到屏幕的控制参数is_print_console 调整out_format参数位置到初始化类时 😀2023-03-14 v2.1.3 update: link 修复输入TXTImages目录且叠字识别时错误 😜2023-03-12 v2.1.2 update: link 修复索引错误，#22 🎢2023-03-11 v2.1.1 update: link 修复单图识别与之前版本差异问题 默认识别模式更改为单图识别，是否使用叠图识别，请自行决定 🥇2023-03-10 v2."/>
@@ -571,7 +571,22 @@
 <li><input checked="" disabled="" type="checkbox"> 制作项目Logo</li>
 <li><input disabled="" type="checkbox"> 更多的测试</li>
 </ul>
-
+<script src="https://giscus.app/client.js"
+        data-repo="SWHL/RapidVideOCR"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk0MDU1ODkwMjk="
+        data-category="Q&A"
+        data-category-id="DIC_kwDOGCzMJc4CUluM"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
     </div>
 
     
@@ -608,9 +623,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-10-08T19:27:36&#43;0800"
-            title="08 Oct 2023, 19:27 &#43;0800">
-            08 Oct 2023, 19:27 &#43;0800
+            data-authdate="2024-04-24T12:50:57&#43;0800"
+            title="24 Apr 2024, 12:50 &#43;0800">
+            24 Apr 2024, 12:50 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
